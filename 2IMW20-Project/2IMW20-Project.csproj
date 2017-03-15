@@ -47,7 +47,8 @@
     <Compile Include="graph\Graph.cs" />
     <Compile Include="graph\UncertainEdge.cs" />
     <Compile Include="graph\UncertainGraph.cs" />
-    <Compile Include="Parser.cs" />
+    <Compile Include="parser\Parser.cs" />
+    <Compile Include="parser\RawDataDblp.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="graph\Vertex.cs" />

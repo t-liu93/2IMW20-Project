@@ -49,16 +49,21 @@ namespace _2IMW20_Project
             //}
 
             //Check parser
-            string location = "file:///D:/ebay.xml";
+            string location = "file:///C:/smallDblp.xml";
 
-            Parser parser = new Parser(location);
+            parser.Parser parser = new parser.Parser(location);
             parser.Load();
-            Dictionary<int,string> testList = parser.GetNodesToMap("seller_name");
-            for (int i = 0; i < testList.Count; i ++)
+            Dictionary<string, int> testList = parser.GetNodesToMap("author");
+            //for (int i = 0; i < testlist.count; i ++)
+            //{
+            //    int value;
+            //    testlist.trygetvalue(i, out value);
+            //    console.writeline(value);
+            //}
+            foreach (KeyValuePair<string, int> kvp in testList)
             {
-                string value = "";
-                testList.TryGetValue(i, out value);
-                Console.WriteLine(value);
+                Console.Write(kvp.Key);
+                Console.WriteLine(kvp.Value);
             }
             Console.ReadKey();
         }
