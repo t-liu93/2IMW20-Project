@@ -13,7 +13,7 @@ namespace _2IMW20_Project.graph
 
         }
 
-        public UncertainGraph(List<Vertex> V, List<Edge> E) : base(V, E)
+        public UncertainGraph(Dictionary<int ,Vertex> V, List<Edge> E) : base(V, E)
         {
           
         }

@@ -8,16 +8,16 @@ namespace _2IMW20_Project.graph
 {
     class Graph
     {
-        public List<Vertex> V;
+        public Dictionary<int ,Vertex> V;
         public List<Edge> E;
 
         public Graph()
         {
-            this.V = new List<Vertex>();
+            this.V = new Dictionary<int, Vertex>();
             this.E = new List<Edge>();
         }
 
-        public Graph(List<Vertex> V, List<Edge> E)
+        public Graph(Dictionary<int, Vertex> V, List<Edge> E)
         {
             this.V = V;
             this.E = E;
@@ -58,8 +58,12 @@ namespace _2IMW20_Project.graph
             // Add edge to the list
             E.Add(e);
 
-            // TODO: Update vertex degree
+            // Update vertex degree
+            V[e.u].vertexDegree++;
+            V[e.v].vertexDegree++;
+
             // TODO: Update triangle degree
+
         }
         
 
@@ -69,7 +73,7 @@ namespace _2IMW20_Project.graph
         /// <returns>The resulting graph</returns>
         public static Graph constructFromDataset()
         {
-            List<Vertex> vertices = new List<Vertex>();
+            Dictionary<int, Vertex> vertices = new Dictionary<int, Vertex>();
             List<Edge> edges = new List<Edge>();
 
             return new Graph(vertices, edges);
