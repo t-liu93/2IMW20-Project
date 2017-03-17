@@ -15,16 +15,19 @@ namespace _2IMW20_Project.parser
     {
         private Dictionary<string, int> nodes;
         private Dictionary<Edge, int> edges;
+        private string location;
 
-        public RawDataDblp()
+        public RawDataDblp(string location)
         {
             this.nodes = new Dictionary<string, int>();
             this.edges = new Dictionary<Edge, int>();
+            this.location = location;
         }
 
-        public void Parse(string location)
+        public void Parse()
         {
-            //TODO: invoke parser
+            Parser parser = new Parser(this.location);
+            nodes = parser.GetNodesToDictionary("authors");
         }
 
         public void AddNode(string key, int value)

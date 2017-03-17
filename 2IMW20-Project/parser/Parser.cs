@@ -35,7 +35,13 @@ namespace _2IMW20_Project.parser
             base.Load(this.location);
         }
 
-        public Dictionary<string, int> GetNodesToMap(string name)
+        /// <summary>
+        /// Get nodes by tags and stored in a dictionary
+        /// The dictionary uses the nodes.innertext as key and an increasing integer as value
+        /// </summary>
+        /// <param name="name">The tag in string that needed to be stored</param>
+        /// <returns></returns>
+        public Dictionary<string, int> GetNodesToDictionary(string name)
         {
             Dictionary<string, int> tempMap = new Dictionary<string, int>();
             XmlNodeList xmlNodes = base.GetElementsByTagName(name);
@@ -56,7 +62,6 @@ namespace _2IMW20_Project.parser
                 //nodes.Add(element.InnerText);
                 //Console.WriteLine(element.InnerText);
             }
-
             return tempMap;
         }
 
