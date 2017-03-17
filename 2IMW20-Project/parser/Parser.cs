@@ -40,7 +40,7 @@ namespace _2IMW20_Project.parser
         /// The dictionary uses the nodes.innertext as key and an increasing integer as value
         /// </summary>
         /// <param name="name">The tag in string that needed to be stored</param>
-        /// <returns></returns>
+        /// <returns>A dictionary contains nodes with key value string and integer value ID</returns>
         public Dictionary<string, int> GetNodesToDictionary(string name)
         {
             Dictionary<string, int> tempMap = new Dictionary<string, int>();

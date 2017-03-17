@@ -49,21 +49,32 @@ namespace _2IMW20_Project
             //}
 
             //Check parser
-            string location = "file:///C:/smallDblp.xml";
+            string location = "file:///D:/smallDblp.xml";
 
-            parser.Parser parser = new parser.Parser(location);
-            parser.Load();
-            Dictionary<string, int> testList = parser.GetNodesToMap("author");
-            //for (int i = 0; i < testlist.count; i ++)
+            //parser.Parser parser = new parser.Parser(location);
+            //parser.Load();
+            //Dictionary<string, int> testList = parser.GetNodesToDictionary("author");
+            //for (int i = 0; i < testList.Count; i++)
             //{
             //    int value;
-            //    testlist.trygetvalue(i, out value);
-            //    console.writeline(value);
+            //    testList.TryGetValue(i, out value);
+            //    Console.WriteLine(value);
             //}
-            foreach (KeyValuePair<string, int> kvp in testList)
+            //foreach (KeyValuePair<string, int> kvp in testList)
+            //{
+            //    Console.Write(kvp.Key);
+            //    Console.WriteLine(kvp.Value);
+            //}
+            //Console.ReadKey();
+
+            dataset.RawDataDblp r = new dataset.RawDataDblp(location);
+            r.getNodes();
+            r.buildEdges();
+            Dictionary<Edge, int> test = r.GetEdges();
+            foreach(KeyValuePair<Edge, int> kvp in test)
             {
-                Console.Write(kvp.Key);
-                Console.WriteLine(kvp.Value);
+                Console.WriteLine("ID"+kvp.Key.id + "U" + kvp.Key.u + "V" + kvp.Key.v);
+                Console.WriteLine("Counter" + kvp.Value);
             }
             Console.ReadKey();
         }

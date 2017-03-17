@@ -70,8 +70,9 @@ namespace _2IMW20_Project.graph
         /// <summary>
         /// Construct a graph from a dataset
         /// </summary>
+        /// <param name="rawData">Raw data parsed from XML file</param>
         /// <returns>The resulting graph</returns>
-        public static Graph constructFromDataset()
+        public static Graph constructFromDataset(dataset.RawData rawData)
         {
             Dictionary<int, Vertex> vertices = new Dictionary<int, Vertex>();
             List<Edge> edges = new List<Edge>();
