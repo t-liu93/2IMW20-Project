@@ -59,6 +59,11 @@ namespace _2IMW20_Project.parser
         {
             return this.edges;
         }
+
+        public void buildEdges()
+        {
+
+        }
     }
 
 
