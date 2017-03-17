@@ -64,8 +64,7 @@ namespace _2IMW20_Project.graph
 
             // TODO: Update triangle degree
 
-        }
-        
+        }       
 
         /// <summary>
         /// Construct a graph from a dataset
@@ -79,5 +78,4 @@ namespace _2IMW20_Project.graph
 
             return new Graph(vertices, edges);
         }
-    }
 }
