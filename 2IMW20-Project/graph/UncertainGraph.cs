@@ -15,7 +15,7 @@ namespace _2IMW20_Project.graph
 
         public UncertainGraph(Dictionary<int ,Vertex> V, List<Edge> E) : base(V, E)
         {
-          
+
         }
 
 
@@ -39,6 +39,23 @@ namespace _2IMW20_Project.graph
 
                 // TODO: Calculate triangle degree
             }
+        }
+
+
+        /// <summary>
+        /// Construct a graph from a dataset
+        /// </summary>
+        /// <returns>The resulting graph</returns>
+        public static Graph constructFromDataset()
+        {
+            // TODO: probability calculation
+
+            Dictionary<int, Vertex> vertices = new Dictionary<int, Vertex>();
+            List<Edge> edges = new List<Edge>();
+
+            // TODO: Calculate edge probability
+
+            return new UncertainGraph(vertices, edges);
         }
     }
 }

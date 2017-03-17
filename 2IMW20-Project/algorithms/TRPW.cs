@@ -9,13 +9,45 @@ namespace _2IMW20_Project
 {
     class TRPW
     {
-        private List<Edge> edgeList; // Our current edge list
-        private Random random;
+        private UncertainGraph _graph;
+        private List<Edge> _edgeList; // Our current edge list
+        private Random _random;
 
         public TRPW(UncertainGraph G)
         {
-            edgeList = new List<Edge>();
-            random = new Random();
+            // Initialize algorithm
+            _edgeList = new List<Edge>();
+            _random = new Random();
+            _graph = G;
+
+         
+        }
+
+        public void Run()
+        {
+            // Initialize (1)
+            int i = 0;
+            _edgeList = new List<Edge>();
+
+            // Calculate total probability (2)
+            float mG = 0f;
+
+            foreach (UncertainEdge e in _graph.E)
+            {
+                mG += e.probability;
+            }
+
+            // Sort edges according to their probability (3)
+           // List<UncertainEdge> sortedGraphEdges = _graph.E.OrderBy(e => ((UncertainEdge)e).probability).ToList();
+
+
+            int N = 0; // what is N?
+            for (i = 1; i < N; i++) // (9)
+            {
+
+            }
+
+            
         }
     }
 }

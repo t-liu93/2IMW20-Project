@@ -65,18 +65,5 @@ namespace _2IMW20_Project.graph
             // TODO: Update triangle degree
 
         }
-        
-
-        /// <summary>
-        /// Construct a graph from a dataset
-        /// </summary>
-        /// <returns>The resulting graph</returns>
-        public static Graph constructFromDataset()
-        {
-            Dictionary<int, Vertex> vertices = new Dictionary<int, Vertex>();
-            List<Edge> edges = new List<Edge>();
-
-            return new Graph(vertices, edges);
-        }
     }
 }
