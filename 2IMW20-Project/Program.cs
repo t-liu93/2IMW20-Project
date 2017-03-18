@@ -73,8 +73,8 @@ namespace _2IMW20_Project
             Dictionary<Edge, int> test = r.GetEdges();
             foreach(KeyValuePair<Edge, int> kvp in test)
             {
-                Console.WriteLine("ID"+kvp.Key.id + "U" + kvp.Key.u + "V" + kvp.Key.v);
-                Console.WriteLine("Counter" + kvp.Value);
+                Console.WriteLine("ID "+kvp.Key.id + " U " + kvp.Key.u + " V " + kvp.Key.v);
+                Console.WriteLine("Counter " + kvp.Value);
             }
             Console.ReadKey();
         }

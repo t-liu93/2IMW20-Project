@@ -8,7 +8,7 @@ namespace _2IMW20_Project.graph
 {
     class Graph
     {
-        public Dictionary<int ,Vertex> V;
+        public Dictionary<int, Vertex> V;
         public List<Edge> E;
 
         public Graph()
@@ -64,7 +64,7 @@ namespace _2IMW20_Project.graph
 
             // TODO: Update triangle degree
 
-        }       
+        }
 
         /// <summary>
         /// Construct a graph from a dataset
@@ -78,4 +78,5 @@ namespace _2IMW20_Project.graph
 
             return new Graph(vertices, edges);
         }
+    }
 }

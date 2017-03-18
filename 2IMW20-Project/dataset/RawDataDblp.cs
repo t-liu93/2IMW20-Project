@@ -28,6 +28,11 @@ namespace _2IMW20_Project.dataset
             base.nodes = p.GetNodesToDictionary("author");
         }
 
+        /// <summary>
+        /// Build edges
+        /// In this dblp model, if more than one author co-authored an article
+        /// then there is an edge between these authors.
+        /// </summary>
         public void buildEdges()
         {
             System.Xml.XmlNodeList n = p.GetElementsByTagName("article");
@@ -68,6 +73,17 @@ namespace _2IMW20_Project.dataset
                 }
                 
             }
+        }
+
+        /// <summary>
+        /// Build dataset
+        /// invoke the method to get nodes and build edges
+        /// stores them in two class variables in the base class
+        /// </summary>
+        public override void buildDataset()
+        {
+            getNodes();
+            buildEdges();
         }
 
         /// <summary>

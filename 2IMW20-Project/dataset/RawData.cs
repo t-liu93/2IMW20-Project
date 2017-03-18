@@ -108,5 +108,29 @@ namespace _2IMW20_Project.dataset
 
             return max;
         }
+
+        public virtual void buildDataset()
+        {
+        }
+
+        /// <summary>
+        /// Check if the edge is in the dictionary
+        /// We only check two vertices
+        /// If two vertices matches one edge in the dictionary, then the edge exists. 
+        /// </summary>
+        /// <param name="e">The edge to be checked</param>
+        /// <returns>A boolean variable indicates whether the edge exists</returns>
+        protected bool ContainsEdge(Edge e)
+        {
+            foreach(KeyValuePair<Edge, int> kvp in this.edges)
+            {
+                if ((e.u == kvp.Key.u && e.v == kvp.Key.v) ||
+                    (e.u == kvp.Key.v && e.v == kvp.Key.u))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }
