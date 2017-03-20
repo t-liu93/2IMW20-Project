@@ -13,7 +13,13 @@ namespace _2IMW20_Project.dataset
     /// </summary>
     class RawDataDblp : RawData
     {
-        private parser.Parser p;
+        private parser.Parser p; //New instance of an XML parser
+
+        /// <summary>
+        /// Constructor
+        /// Invoke constructor of base cass
+        /// </summary>
+        /// <param name="location">xml file location in URL form</param>
         public RawDataDblp(string location) : base(location)
         {
             p = new parser.Parser(base.location);
@@ -23,7 +29,7 @@ namespace _2IMW20_Project.dataset
         /// <summary>
         /// Get nodes from XML parser in dictionary form
         /// </summary>
-        public override void getNodes()
+        public override void BuildNodes()
         {
             base.nodes = p.GetNodesToDictionary("author");
         }
@@ -38,7 +44,7 @@ namespace _2IMW20_Project.dataset
             System.Xml.XmlNodeList n = p.GetElementsByTagName("article");
             foreach(System.Xml.XmlElement element in n)
             {
-                if (getQuantityOfTag(element, "author") > 1)
+                if (GetQuantityOfTag(element, "author") > 1)
                 {
                     System.Xml.XmlNodeList e = element.GetElementsByTagName("author");
                     for (int i = 0; i < e.Count; i++)
@@ -57,9 +63,9 @@ namespace _2IMW20_Project.dataset
         /// invoke the method to get nodes and build edges
         /// stores them in two class variables in the base class
         /// </summary>
-        public override void buildDataset()
+        public override void BuildDataset()
         {
-            getNodes();
+            BuildNodes();
             buildEdges();
         }
 
@@ -69,9 +75,8 @@ namespace _2IMW20_Project.dataset
         /// <param name="xmlElement">The XML element to be checked</param>
         /// <param name="tag">The specified tag</param>
         /// <returns></returns>
-        private int getQuantityOfTag(System.Xml.XmlElement xmlElement, string tag)
+        private int GetQuantityOfTag(System.Xml.XmlElement xmlElement, string tag)
         {
-            //System.Xml.XmlNodeList n = xmlElement.GetElementsByTagName(tag);
             return xmlElement.GetElementsByTagName(tag).Count;
         }
     }

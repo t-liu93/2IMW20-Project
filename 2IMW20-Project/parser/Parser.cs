@@ -11,12 +11,6 @@ namespace _2IMW20_Project.parser
     {
         private string location;
         private int nodeQuantity;
-        //TODO:
-        //1. Raw data from xml
-        //1.1. Authors
-        //1.2. Title optional
-        //1.3. Edges
-        //1.3.1. Counter of edges
 
         /// <summary>
         /// Constructor
@@ -52,15 +46,11 @@ namespace _2IMW20_Project.parser
               
                 if (! (element == null))
                 {
-                    //tempMap.Add(element.InnerText, vertix++);
-                    //Console.WriteLine("Key: " + element.InnerText + "Value: " + vertix++);
                     if (!(tempMap.ContainsKey(element.InnerText)))
                     {
                         tempMap.Add(element.InnerText, vertix++);
                     }
                 }
-                //nodes.Add(element.InnerText);
-                //Console.WriteLine(element.InnerText);
             }
             return tempMap;
         }

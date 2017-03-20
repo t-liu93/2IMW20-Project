@@ -49,39 +49,24 @@ namespace _2IMW20_Project
             //}
 
             //Check parser
-            string location = "file:///D:/smallDblp.xml";
+            string location = "smallDblp.xml";
 
-            //parser.Parser parser = new parser.Parser(location);
-            //parser.Load();
-            //Dictionary<string, int> testList = parser.GetNodesToDictionary("author");
-            //for (int i = 0; i < testList.Count; i++)
-            //{
-            //    int value;
-            //    testList.TryGetValue(i, out value);
-            //    Console.WriteLine(value);
-            //}
-            //foreach (KeyValuePair<string, int> kvp in testList)
-            //{
-            //    Console.Write(kvp.Key);
-            //    Console.WriteLine(kvp.Value);
-            //}
-            //Console.ReadKey();
+            //Following code is used to generate the dataset that will be used by Graph and algorithms
 
-            dataset.RawDataDblp r = new dataset.RawDataDblp(location);
-            r.getNodes();
-            r.buildEdges();
-            Dictionary<Edge, int> test = r.GetEdges();
-            Dictionary<string, int> testNodes = r.GetNodes();
-            foreach (KeyValuePair<Edge, int> kvp in test)
-            {
-                Console.WriteLine("ID " + kvp.Key.id + " U " + kvp.Key.u + " V " + kvp.Key.v);
-                Console.WriteLine("Counter " + kvp.Value);
-            }
-            //foreach (KeyValuePair<string, int> kvp in testNodes)
-            //{
-            //    Console.WriteLine("Author: " + kvp.Key + " id: " + kvp.Value);
-            //}
-            Console.ReadKey();
+            dataset.RawData dataset = new dataset.RawDataDblp(location); //In the final version, location will be input from console.
+            dataset.BuildDataset();
+
+            //Now the dataset can be load by using following code:
+            dataset.GetNodes();
+            //This will return a dictionary contains all nodes, in form <string, int>
+            //The key of the dictionary will be the string from xml
+            //The value of each key will be the node ID
+
+            dataset.GetEdges();
+            //This will return a dictionary contains all edges, in form <Edge, int>
+            //The edges are uncertain, contains an unique id, a vertix u and a vertix v
+            //The value represents the time an edge appears
+            //Also known as the weight of the edge
         }
     }
 }

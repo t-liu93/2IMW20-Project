@@ -25,9 +25,9 @@ namespace _2IMW20_Project.dataset
         }
 
         /// <summary>
-        /// getNodes method, should be overrided in each kind of dataset
+        /// BuildNodes method, should be overrided in each kind of dataset
         /// </summary>
-        public virtual void getNodes()
+        public virtual void BuildNodes()
         {
         }
 
@@ -40,7 +40,7 @@ namespace _2IMW20_Project.dataset
         {
             if (!nodes.ContainsKey(key))
             {
-                nodes.Add(key, getMax(nodes) + 1);
+                nodes.Add(key, GetMaxNodeId(nodes) + 1);
             }
         }
 
@@ -63,11 +63,21 @@ namespace _2IMW20_Project.dataset
             }
         }
 
+        //Get class variables
+
+        /// <summary>
+        /// Get nodes dictionary
+        /// </summary>
+        /// <returns>Nodes dictionary</returns>
         public Dictionary<string, int> GetNodes()
         {
             return this.nodes;
         }
-
+        
+        /// <summary>
+        /// Get edges dictionary
+        /// </summary>
+        /// <returns>Edges dictionary</returns>
         public Dictionary<Edge, int> GetEdges()
         {
             return this.edges;
@@ -78,7 +88,7 @@ namespace _2IMW20_Project.dataset
         /// </summary>
         /// <param name="dic">the input node dictionary</param>
         /// <returns></returns>
-        private int getMax(Dictionary<string, int> dic)
+        private int GetMaxNodeId(Dictionary<string, int> dic)
         {
             int max = 0;
             foreach(KeyValuePair<string, int> kvp in dic)
@@ -112,7 +122,11 @@ namespace _2IMW20_Project.dataset
             return max;
         }
 
-        public virtual void buildDataset()
+        /// <summary>
+        /// Build dataset including nodes and edges
+        /// Be overrided by sub classes
+        /// </summary>
+        public virtual void BuildDataset()
         {
         }
 
