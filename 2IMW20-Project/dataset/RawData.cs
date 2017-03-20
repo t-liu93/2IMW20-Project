@@ -14,7 +14,7 @@ namespace _2IMW20_Project.dataset
     class RawData
     {
         protected Dictionary<string, int> nodes; //Nodes, key string, value integer ID
-        protected Dictionary<Edge, int> edges; //Edges, key Edge, value integer ID
+        protected Dictionary<Edge, int> edges; //Edges, key Edge, value integer counter, a.k.a. times appear
         protected string location; //Dataset location
 
         public RawData(string location)
@@ -47,16 +47,19 @@ namespace _2IMW20_Project.dataset
         /// <summary>
         /// Add edge to a dictionary from xml
         /// </summary>
-        /// <param name="edge">The edge to be input</param>
-        public void AddEdge(Edge edge)
+        /// <param name="u">vertix u of the edge</param>
+        /// <param name="v">vertix v of the edge</param>
+        public void AddEdge(int u, int v)
         {
-            if (!edges.ContainsKey(edge))
+            int i = GetEdgeId(u, v);
+            if (i != -1)
             {
-                edges.Add(edge, 1);
+                Edge e = GetEdgeById(i);
+                edges[e]++;
             }
             else
             {
-                edges[edge]++;
+                edges.Add(new Edge(GetMaxEdgeId(this.edges) + 1, u, v), 1);
             }
         }
 
@@ -94,7 +97,7 @@ namespace _2IMW20_Project.dataset
         /// </summary>
         /// <param name="edge">Edges to be checked</param>
         /// <returns></returns>
-        protected int getEdgeId(Dictionary<Edge, int> edge)
+        protected int GetMaxEdgeId(Dictionary<Edge, int> edge)
         {
             int max = 0;
 
@@ -114,23 +117,67 @@ namespace _2IMW20_Project.dataset
         }
 
         /// <summary>
-        /// Check if the edge is in the dictionary
+        /// Check if the two vertices matches an edge in the dictionary
         /// We only check two vertices
         /// If two vertices matches one edge in the dictionary, then the edge exists. 
         /// </summary>
-        /// <param name="e">The edge to be checked</param>
+        /// <param name="u">Vertix u</param>
+        /// <param name="v">Vertix v</param>
         /// <returns>A boolean variable indicates whether the edge exists</returns>
-        protected bool ContainsEdge(Edge e)
+        //protected bool ContainsEdge(int u, int v)
+        //{
+        //    foreach(KeyValuePair<Edge, int> kvp in this.edges)
+        //    {
+        //        if ((u == kvp.Key.u) && (v == kvp.Key.v))
+        //        {
+        //            return true;
+        //        }
+        //        else if ((u == kvp.Key.v) && (v == kvp.Key.u))
+        //        {
+        //            return true;
+        //        }
+        //    }
+        //    return false;
+        //}
+
+        /// <summary>
+        /// When an edge exisits in this.edges
+        /// Then check and return the edge id of it.
+        /// </summary>
+        /// <param name="e">The input edge to be checked</param>
+        /// <returns>The corresponding edge id</returns>
+        protected int GetEdgeId(int u, int v)
         {
             foreach(KeyValuePair<Edge, int> kvp in this.edges)
             {
-                if ((e.u == kvp.Key.u && e.v == kvp.Key.v) ||
-                    (e.u == kvp.Key.v && e.v == kvp.Key.u))
+                if ((u == kvp.Key.u) && (v == kvp.Key.v))
                 {
-                    return true;
+                    return kvp.Key.id;
+                }
+                else if ((u == kvp.Key.v) && (v == kvp.Key.u))
+                {
+                    return kvp.Key.id; 
                 }
             }
-            return false;
+            return -1;
+        }
+
+        /// <summary>
+        /// Get an edge by its corresponding ID
+        /// </summary>
+        /// <param name="id">The ID to identify an edge</param>
+        /// <returns>An edge with corresponding ID</returns>
+        protected Edge GetEdgeById(int id)
+        {
+            Edge e = new Edge(-1, -1, -1);
+            foreach(KeyValuePair<Edge, int> kvp in this.edges)
+            {
+                if (id == kvp.Key.id)
+                {
+                    e = kvp.Key;
+                }
+            }
+            return e;
         }
     }
 }

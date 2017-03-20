@@ -71,11 +71,16 @@ namespace _2IMW20_Project
             r.getNodes();
             r.buildEdges();
             Dictionary<Edge, int> test = r.GetEdges();
-            foreach(KeyValuePair<Edge, int> kvp in test)
+            Dictionary<string, int> testNodes = r.GetNodes();
+            foreach (KeyValuePair<Edge, int> kvp in test)
             {
-                Console.WriteLine("ID "+kvp.Key.id + " U " + kvp.Key.u + " V " + kvp.Key.v);
+                Console.WriteLine("ID " + kvp.Key.id + " U " + kvp.Key.u + " V " + kvp.Key.v);
                 Console.WriteLine("Counter " + kvp.Value);
             }
+            //foreach (KeyValuePair<string, int> kvp in testNodes)
+            //{
+            //    Console.WriteLine("Author: " + kvp.Key + " id: " + kvp.Value);
+            //}
             Console.ReadKey();
         }
     }

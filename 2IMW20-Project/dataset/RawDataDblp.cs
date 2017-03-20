@@ -36,26 +36,8 @@ namespace _2IMW20_Project.dataset
         public void buildEdges()
         {
             System.Xml.XmlNodeList n = p.GetElementsByTagName("article");
-            //Console.WriteLine("test");
-            //Console.ReadKey();
-            //Console.WriteLine(base.location);
-            //Console.WriteLine(base.nodes);
-            //Console.WriteLine(n.Item(1).InnerXml);
-            //foreach(XmlNode element in n)
-            //{
-            //    Console.WriteLine("123");
-            //    Console.ReadKey();
-            //}
-            //foreach (KeyValuePair<string, int> kvp in base.nodes)
-            //{
-            //    Console.Write(kvp.Key);
-            //    Console.WriteLine(kvp.Value);
-            //}
-            //Console.ReadKey();
             foreach(System.Xml.XmlElement element in n)
             {
-                //System.Xml.XmlNodeList temp = element;
-                //Console.WriteLine(element);
                 if (getQuantityOfTag(element, "author") > 1)
                 {
                     System.Xml.XmlNodeList e = element.GetElementsByTagName("author");
@@ -63,15 +45,10 @@ namespace _2IMW20_Project.dataset
                     {
                         for (int j = i + 1; j < e.Count; j ++)
                         {
-                            Edge edge = new Edge(base.getEdgeId(base.edges) + 1,
-                                base.nodes[e.Item(i).InnerText],
-                                base.nodes[e.Item(j).InnerText]);
-                            //Console.WriteLine(base.nodes[e.Item(i).InnerText]);
-                            base.AddEdge(edge);
+                            base.AddEdge(base.nodes[e.Item(i).InnerText], base.nodes[e.Item(j).InnerText]);
                         }
                     }
-                }
-                
+                }  
             }
         }
 
@@ -94,8 +71,8 @@ namespace _2IMW20_Project.dataset
         /// <returns></returns>
         private int getQuantityOfTag(System.Xml.XmlElement xmlElement, string tag)
         {
-            System.Xml.XmlNodeList n = xmlElement.GetElementsByTagName(tag);
-            return n.Count;
+            //System.Xml.XmlNodeList n = xmlElement.GetElementsByTagName(tag);
+            return xmlElement.GetElementsByTagName(tag).Count;
         }
     }
 

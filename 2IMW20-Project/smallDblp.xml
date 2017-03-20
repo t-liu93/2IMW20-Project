@@ -1,0 +1,917 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE dblp
+  SYSTEM 'dblp-2016-10-01.dtd'>
+<dblp>
+	<article key="persons/CoddD74" mdate="2002-01-03">
+		<author>E. F. Codd</author>
+		<author>C. J. Date</author>
+		<title>Interactive Support for Non-Programmers: The Relational and Network Approaches.</title>
+		<journal>IBM Research Report, San Jose, California</journal>
+		<volume>RJ1400</volume>
+		<month>June</month>
+		<year>1974</year>
+	</article>
+	<article key="persons/CoddD74" mdate="2002-01-03">
+		<author>E. F. Codd</author>
+		<author>C. J. Date</author>
+		<title>Interactive Support for Non-Programmers: The Relational and Network Approaches2.</title>
+		<journal>IBM Research Report, San Jose, California</journal>
+		<volume>RJ1400</volume>
+		<month>June</month>
+		<year>1974</year>
+	</article>
+	<article key="persons/CoddD74" mdate="2002-01-03">
+		<author>E. F. Codd</author>
+		<author>C. J. Date</author>
+		<title>Interactive Support for Non-Programmers: The Relational and Network Approaches3.</title>
+		<journal>IBM Research Report, San Jose, California</journal>
+		<volume>RJ1400</volume>
+		<month>June</month>
+		<year>1974</year>
+	</article>
+	<article key="persons/CoddD74" mdate="2002-01-03">
+		<author>E. F. Codd</author>
+		<author>C. J. Date</author>
+		<title>Interactive Support for Non-Programmers: The Relational and Network Approaches4.</title>
+		<journal>IBM Research Report, San Jose, California</journal>
+		<volume>RJ1400</volume>
+		<month>June</month>
+		<year>1974</year>
+	</article>
+	<article key="persons/CoddD74" mdate="2002-01-03">
+		<author>E. F. Codd</author>
+		<author>C. J. Date</author>
+		<title>Interactive Support for Non-Programmers: The Relational and Network Approaches5.</title>
+		<journal>IBM Research Report, San Jose, California</journal>
+		<volume>RJ1400</volume>
+		<month>June</month>
+		<year>1974</year>
+	</article>
+	<article key="persons/CoddD74" mdate="2002-01-03">
+		<author>E. F. Codd</author>
+		<author>C. J. Date</author>
+		<title>Interactive Support for Non-Programmers: The Relational and Network Approaches6.</title>
+		<journal>IBM Research Report, San Jose, California</journal>
+		<volume>RJ1400</volume>
+		<month>June</month>
+		<year>1974</year>
+	</article>
+	<article key="persons/Hall74" mdate="2002-01-03">
+		<author>Patrick A. V. Hall</author>
+		<title>Common Subexpression Identification in General Algebraic Systems.</title>
+		<journal>Technical Rep. UKSC 0060, IBM United Kingdom Scientific Centre</journal>
+		<month>November</month>
+		<year>1974</year>
+	</article>
+	<article key="persons/Codd81" mdate="2002-01-03">
+		<author>E. F. Codd</author>
+		<title>The Capabilities of Relational Database Management Systems.</title>
+		<journal>IBM Research Report, San Jose, California</journal>
+		<month>May</month>
+		<year>1981</year>
+		<volume>RJ3132</volume>
+		<cdrom>ibmTR/rj3132.pdf</cdrom>
+		<ee>db/labs/ibm/RJ3132.html</ee>
+	</article>
+	<article key="persons/Tresch96" mdate="2002-01-03">
+		<author>Markus Tresch</author>
+		<title>Principles of Distributed Object Database Languages.</title>
+		<journal>technical Report 248, ETH Zurich, Dept. of Computer Science</journal>
+		<month>July</month>
+		<year>1996</year>
+	</article>
+	<article key="persons/Codd72" mdate="2016-09-08" publtype="informal publication">
+		<author>E. F. Codd</author>
+		<title>Relational Completeness of Data Base Sublanguages.</title>
+		<journal>IBM Research Report</journal>
+		<volume>RJ987</volume>
+		<month>March</month>
+		<year>1972</year>
+		<cdrom>ibmTR/rj987.pdf</cdrom>
+		<ee>db/labs/ibm/RJ987.html</ee>
+		<note>republished on &quot;ACM SIGMOD Anthology&quot;</note>
+	</article>
+	<article key="persons/Codd71a" mdate="2015-03-17">
+		<author>E. F. Codd</author>
+		<title>Further Normalization of the Data Base Relational Model.</title>
+		<journal>IBM Research Report, San Jose, California</journal>
+		<volume>RJ909</volume>
+		<month>August</month>
+		<year>1971</year>
+	</article>
+	<article key="persons/Codd71" mdate="2002-01-03">
+		<author>E. F. Codd</author>
+		<title>Data Base Sublanguage Founded on the Relational Calculus.</title>
+		<journal>IBM Research Report, San Jose, California</journal>
+		<month>July</month>
+		<volume>RJ893</volume>
+		<year>1971</year>
+	</article>
+	<article key="persons/Codd69" mdate="2002-01-03">
+		<author>E. F. Codd</author>
+		<title>Derivability, Redundancy and Consistency of Relations Stored in Large Data Banks.</title>
+		<journal>IBM Research Report, San Jose, California</journal>
+		<volume>RJ599</volume>
+		<month>August</month>
+		<year>1969</year>
+		<cdrom>ibmTR/rj599.pdf</cdrom>
+		<ee>db/labs/ibm/RJ599.html</ee>
+	</article>
+	<article key="persons/Codd71b" mdate="2002-01-03">
+		<author>E. F. Codd</author>
+		<title>Normalized Data Base Structure: A Brief Tutorial.</title>
+		<journal>IBM Research Report, San Jose, California</journal>
+		<month>November</month>
+		<year>1971</year>
+		<volume>RJ935</volume>
+	</article>
+	<article key="persons/CasperGGGHLR12" mdate="2012-02-27">
+		<author>Markus Casper</author>
+		<author>Gayane Grigoryan</author>
+		<author>Oliver Gronz</author>
+		<author>Oliver Gutjahr</author>
+		<author>Gunther Heinemann</author>
+		<author>Rita Ley</author>
+		<author>Andreas Rock</author>
+		<title>Analysis of projected hydrological behavior of catchments based on signature indices</title>
+		<journal>Hydrology and Earth System Sciences</journal>
+		<volume>16</volume>
+		<pages>409-421</pages>
+		<year>2012</year>
+		<ee>http://dx.doi.org/10.5194/hess-16-409-2012</ee>
+		<url>http://dx.doi.org/10.5194/hess-16-409-2012</url>
+	</article>
+	<article key="persons/LeyCHM11" mdate="2012-02-20">
+		<author>Rita Ley</author>
+		<author>Markus Casper</author>
+		<author>Hugo Hellebrand</author>
+		<author>Ralf Merz</author>
+		<title>Catchment classification by runoff behaviour with self-organizing maps (SOM)</title>
+		<journal>Hydrology and Earth System Sciences</journal>
+		<volume>15</volume>
+		<pages>2947-2962</pages>
+		<year>2011</year>
+		<ee>http://dx.doi.org/10.5194/hess-15-2947-2011</ee>
+		<url>http://dx.doi.org/10.5194/hess-15-2947-2011</url>
+	</article>
+	<article key="journals/nca/BacciuBCGM14" mdate="2014-04-06">
+		<author>Davide Bacciu</author>
+		<author>Paolo Barsocchi</author>
+		<author>Stefano Chessa</author>
+		<author>Claudio Gallicchio</author>
+		<author>Alessio Micheli</author>
+		<title>An experimental characterization of reservoir computing in ambient assisted living applications.</title>
+		<pages>1451-1464</pages>
+		<year>2014</year>
+		<volume>24</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>6</number>
+		<ee>http://dx.doi.org/10.1007/s00521-013-1364-4</ee>
+		<url>db/journals/nca/nca24.html#BacciuBCGM14</url>
+	</article>
+	<article key="journals/nca/ChenCCL11" mdate="2015-04-13">
+		<author>P. C. Chen</author>
+		<author>Cheng-Wu Chen</author>
+		<author>Wei-Ling Chiang</author>
+		<author>D. C. Lo</author>
+		<title>GA-based decoupled adaptive FSMC for nonlinear systems by a singular perturbation scheme.</title>
+		<pages>517-526</pages>
+		<year>2011</year>
+		<volume>20</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>4</number>
+		<ee>http://dx.doi.org/10.1007/s00521-011-0540-7</ee>
+		<url>db/journals/nca/nca20.html#ChenCCL11</url>
+	</article>
+	<article key="journals/nca/WangXW14" mdate="2015-10-28">
+		<author>Yong Wang</author>
+		<author>Jian-Bin Xie</author>
+		<author>Yi Wu 0003</author>
+		<title>Two-dimensional complete neighborhood preserving embedding.</title>
+		<pages>1505-1517</pages>
+		<year>2014</year>
+		<volume>24</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>7-8</number>
+		<ee>http://dx.doi.org/10.1007/s00521-013-1365-3</ee>
+		<url>db/journals/nca/nca24.html#WangXW14</url>
+	</article>
+	<article key="journals/nca/BhatnagarK12" mdate="2012-05-15">
+		<author>A. Bhatnagar</author>
+		<author>Manoj Khandelwal</author>
+		<title>An intelligent approach to evaluate drilling performance.</title>
+		<pages>763-770</pages>
+		<year>2012</year>
+		<volume>21</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>4</number>
+		<ee>http://dx.doi.org/10.1007/s00521-010-0457-6</ee>
+		<url>db/journals/nca/nca21.html#BhatnagarK12</url>
+	</article>
+	<article key="journals/nca/JunKOP13" mdate="2013-06-03">
+		<author>Soram Jun</author>
+		<author>Minook Kim</author>
+		<author>Myungwoo Oh</author>
+		<author>Hyung-Min Park</author>
+		<title>Robust speech recognition based on independent vector analysis using harmonic frequency dependency.</title>
+		<pages>1321-1327</pages>
+		<year>2013</year>
+		<volume>22</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>7-8</number>
+		<ee>http://dx.doi.org/10.1007/s00521-012-1002-6</ee>
+		<url>db/journals/nca/nca22.html#JunKOP13</url>
+	</article>
+	<article key="journals/nca/MastorocostasVHM08" mdate="2008-11-28">
+		<author>Paris A. Mastorocostas</author>
+		<author>Dimitris N. Varsamis</author>
+		<author>Constantinos S. Hilas</author>
+		<author>Constantinos A. Mastorocostas</author>
+		<title>A generalized Takagi-Sugeno-Kang recurrent fuzzy-neural filter for adaptive noise cancelation.</title>
+		<pages>521-529</pages>
+		<year>2008</year>
+		<volume>17</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>5-6</number>
+		<ee>http://dx.doi.org/10.1007/s00521-007-0129-3</ee>
+		<url>db/journals/nca/nca17.html#MastorocostasVHM08</url>
+	</article>
+	<article key="journals/nca/FeghRN13" mdate="2015-11-13">
+		<author>Asaad Fegh</author>
+		<author>Mohammad Ali Riahi</author>
+		<author>Gholam-Hossain Norouzi</author>
+		<title>Permeability prediction and construction of 3D geological model: application of neural networks and stochastic approaches in an Iranian gas reservoir.</title>
+		<pages>1763-1770</pages>
+		<year>2013</year>
+		<volume>23</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>6</number>
+		<ee>http://dx.doi.org/10.1007/s00521-012-1142-8</ee>
+		<url>db/journals/nca/nca23.html#FeghRN13</url>
+	</article>
+	<article key="journals/nca/RodriguezSC99" mdate="2011-05-31">
+		<author>Nibaldo Rodriguez</author>
+		<author>Ismael Soto</author>
+		<author>Rolando A. Carrasco</author>
+		<title>Adaptive Predistortion and Postdistortion for Nonlinear Channel.</title>
+		<pages>339-346</pages>
+		<year>1999</year>
+		<volume>8</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>4</number>
+		<ee>http://dx.doi.org/10.1007/s005210050039</ee>
+		<url>db/journals/nca/nca8.html#RodriguezSC99</url>
+	</article>
+	<article key="journals/nca/VongTPW15" mdate="2015-06-08">
+		<author>Chi-Man Vong</author>
+		<author>Keng Iam Tai</author>
+		<author>Chi-Man Pun</author>
+		<author>Pak-Kin Wong</author>
+		<title>Fast and accurate face detection by sparse Bayesian extreme learning machine.</title>
+		<pages>1149-1156</pages>
+		<year>2015</year>
+		<volume>26</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>5</number>
+		<ee>http://dx.doi.org/10.1007/s00521-014-1803-x</ee>
+		<url>db/journals/nca/nca26.html#VongTPW15</url>
+	</article>
+	<article key="journals/nca/DongKYS13" mdate="2013-11-08">
+		<author>Hairong Dong</author>
+		<author>Yuanlei Kang</author>
+		<author>Xiaoxia Yang</author>
+		<author>Xubin Sun</author>
+		<title>Fuzzy control of a class of autonomous formation constrained systems.</title>
+		<pages>1915-1922</pages>
+		<year>2013</year>
+		<volume>23</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>7-8</number>
+		<ee>http://dx.doi.org/10.1007/s00521-012-1199-4</ee>
+		<url>db/journals/nca/nca23.html#DongKYS13</url>
+	</article>
+	<article key="journals/nca/BalasubramaniamVR12" mdate="2016-11-29">
+		<author>P. Balasubramaniam</author>
+		<author>Vembarasan Vaitheeswaran</author>
+		<author>R. Rakkiyappan</author>
+		<title>Global robust asymptotic stability analysis of uncertain switched Hopfield neural networks with time delay in the leakage term.</title>
+		<pages>1593-1616</pages>
+		<year>2012</year>
+		<volume>21</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>7</number>
+		<ee>http://dx.doi.org/10.1007/s00521-011-0639-x</ee>
+		<url>db/journals/nca/nca21.html#BalasubramaniamVR12</url>
+	</article>
+	<article key="journals/nca/SeeraLIS13" mdate="2014-04-01">
+		<author>Manjeevan Seera</author>
+		<author>Chee Peng Lim</author>
+		<author>Dahaman Ishak</author>
+		<author>Harapajan Singh</author>
+		<title>Application of the fuzzy min-max neural network to fault detection and diagnosis of induction motors.</title>
+		<pages>191-200</pages>
+		<year>2013</year>
+		<volume>23</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>Supplement-1</number>
+		<ee>http://dx.doi.org/10.1007/s00521-012-1310-x</ee>
+		<url>db/journals/nca/nca23.html#SeeraLIS13</url>
+	</article>
+	<article key="journals/nca/LimaCZ09" mdate="2009-12-11">
+		<author>Clodoaldo Ap. M. Lima</author>
+		<author>Andrc L. V. Coelho</author>
+		<author>Fernando J. Von Zuben</author>
+		<title>Pattern classification with mixtures of weighted least-squares support vector machine experts.</title>
+		<pages>843-860</pages>
+		<year>2009</year>
+		<volume>18</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>7</number>
+		<ee>http://dx.doi.org/10.1007/s00521-008-0210-6</ee>
+		<url>db/journals/nca/nca18.html#LimaCZ09</url>
+	</article>
+	<article key="journals/nca/SchmicklTC12" mdate="2012-02-24">
+		<author>Thomas Schmickl</author>
+		<author>Ronald Thenius</author>
+		<author>Karl Crailsheim</author>
+		<title>Swarm-intelligent foraging in honeybees: benefits and costs of task-partitioning and environmental fluctuations.</title>
+		<pages>251-268</pages>
+		<year>2012</year>
+		<volume>21</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>2</number>
+		<ee>http://dx.doi.org/10.1007/s00521-010-0357-9</ee>
+		<url>db/journals/nca/nca21.html#SchmicklTC12</url>
+	</article>
+	<article key="journals/nca/WilliamsS12" mdate="2014-02-24">
+		<author>D. R. Prince Williams</author>
+		<author>Arsham Borumand Saeid</author>
+		<title>Fuzzy soft ideals in subtraction algebras.</title>
+		<pages>159-169</pages>
+		<year>2012</year>
+		<volume>21</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>Supplement-1</number>
+		<ee>http://dx.doi.org/10.1007/s00521-011-0753-9</ee>
+		<url>db/journals/nca/nca21.html#WilliamsS12</url>
+	</article>
+	<article key="journals/nca/SezginAC12a" mdate="2014-02-24">
+		<author>Aslihan Sezgin</author>
+		<author>Akin Osman Atagun</author>
+		<author>Naim cagman</author>
+		<title>Soft intersection near-rings with its applications.</title>
+		<pages>221-229</pages>
+		<year>2012</year>
+		<volume>21</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>Supplement-1</number>
+		<ee>http://dx.doi.org/10.1007/s00521-011-0782-4</ee>
+		<url>db/journals/nca/nca21.html#SezginAC12a</url>
+	</article>
+	<article key="journals/nca/CetisliE11" mdate="2011-04-21">
+		<author>Bayram Cetisli</author>
+		<author>Rifat Edizkan</author>
+		<title>Estimation of adaptive neuro-fuzzy inference system parameters with the expectation maximization algorithm and extended Kalman smoother.</title>
+		<pages>403-415</pages>
+		<year>2011</year>
+		<volume>20</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>3</number>
+		<ee>http://dx.doi.org/10.1007/s00521-010-0406-4</ee>
+		<url>db/journals/nca/nca20.html#CetisliE11</url>
+	</article>
+	<article key="journals/nca/WangXJD16" mdate="2016-08-23">
+		<author>Guanying Wang</author>
+		<author>Xinzheng Xu</author>
+		<author>Xiangying Jiang</author>
+		<author>Shifei Ding</author>
+		<title>Medical image registration based on self-adapting pulse-coupled neural networks and mutual information.</title>
+		<pages>1917-1926</pages>
+		<year>2016</year>
+		<volume>27</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>7</number>
+		<ee>http://dx.doi.org/10.1007/s00521-015-1985-x</ee>
+		<url>db/journals/nca/nca27.html#WangXJD16</url>
+	</article>
+	<article key="journals/nca/VundavilliKPP15" mdate="2015-07-24">
+		<author>Pandu Ranga Vundavilli</author>
+		<author>J. Phani Kumar</author>
+		<author>Ch. Sai Priyatham</author>
+		<author>Mahesh B. Parappagoudar</author>
+		<title>Neural network-based expert system for modeling of tube spinning process.</title>
+		<pages>1481-1493</pages>
+		<year>2015</year>
+		<volume>26</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>6</number>
+		<ee>http://dx.doi.org/10.1007/s00521-015-1820-4</ee>
+		<url>db/journals/nca/nca26.html#VundavilliKPP15</url>
+	</article>
+	<article key="journals/nca/SharmaD16a" mdate="2016-08-23">
+		<author>Manoj Kumar Sharma</author>
+		<author>Vijay Pal Dhaka</author>
+		<title>Pixel plot and trace based segmentation method for bilingual handwritten scripts using feedforward neural network.</title>
+		<pages>1817-1829</pages>
+		<year>2016</year>
+		<volume>27</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>7</number>
+		<ee>http://dx.doi.org/10.1007/s00521-015-1972-2</ee>
+		<url>db/journals/nca/nca27.html#SharmaD16a</url>
+	</article>
+	<article key="journals/nca/HamzeiM00" mdate="2011-05-31">
+		<author>G. H. Shah Hamzei</author>
+		<author>David J. Mulvaney</author>
+		<title>Implementation of an Intelligent Control System Using Fuzzy ITI.</title>
+		<pages>12-18</pages>
+		<year>2000</year>
+		<volume>9</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>1</number>
+		<ee>http://dx.doi.org/10.1007/s005210070030</ee>
+		<url>db/journals/nca/nca9.html#HamzeiM00</url>
+	</article>
+	<article key="journals/nca/Chen16" mdate="2016-06-27">
+		<author>Tin-Chih Toly Chen</author>
+		<title>Fuzzy back-propagation network approach for estimating the simulation workload.</title>
+		<pages>1707-1715</pages>
+		<year>2016</year>
+		<volume>27</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>6</number>
+		<ee>http://dx.doi.org/10.1007/s00521-015-1967-z</ee>
+		<url>db/journals/nca/nca27.html#Chen16</url>
+	</article>
+	<article key="journals/nca/SalahKG13" mdate="2013-07-24">
+		<author>Ahmed Salah</author>
+		<author>Majid Khan</author>
+		<author>Muhammad Asif Gondal</author>
+		<title>A novel solution procedure for fuzzy fractional heat equations by homotopy analysis transform method.</title>
+		<pages>269-271</pages>
+		<year>2013</year>
+		<volume>23</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>2</number>
+		<ee>http://dx.doi.org/10.1007/s00521-012-0855-z</ee>
+		<url>db/journals/nca/nca23.html#SalahKG13</url>
+	</article>
+	<article key="journals/nca/JonesV94" mdate="2011-05-31">
+		<author>Marggie Jones</author>
+		<author>David Vernon</author>
+		<title>Using Neural Networks to Learn Hand-Eye Co-ordination.</title>
+		<pages>2-12</pages>
+		<year>1994</year>
+		<volume>2</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>1</number>
+		<url>db/journals/nca/nca2.html#JonesV94</url>
+		<ee>http://dx.doi.org/10.1007/BF01423095</ee>
+	</article>
+	<article key="journals/nca/KhalajNYKJ14" mdate="2014-01-21">
+		<author>Gholamreza Khalaj</author>
+		<author>Ali Nazari</author>
+		<author>Hossein Yoozbashizadeh</author>
+		<author>Alireza Khodabandeh</author>
+		<author>Mohammad Jahazi</author>
+		<title>ANN model to predict the effects of composition and heat treatment parameters on transformation start temperature of microalloyed steels.</title>
+		<pages>301-308</pages>
+		<year>2014</year>
+		<volume>24</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>2</number>
+		<ee>http://dx.doi.org/10.1007/s00521-012-1233-6</ee>
+		<url>db/journals/nca/nca24.html#KhalajNYKJ14</url>
+	</article>
+	<article key="journals/nca/Manwaring94" mdate="2011-05-31">
+		<author>Howard S. Manwaring</author>
+		<title>A Comparison of Backpropagation and General Regression Neural Networks in Quantative Trace Metal Analysis using Anodic Stripping Voltammetry and Cybernetic Instrumentation.</title>
+		<pages>168-178</pages>
+		<year>1994</year>
+		<volume>2</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>3</number>
+		<url>db/journals/nca/nca2.html#Manwaring94</url>
+		<ee>http://dx.doi.org/10.1007/BF01415013</ee>
+	</article>
+	<article key="journals/nca/Delgado00" mdate="2011-05-31">
+		<author>A. Delgado</author>
+		<title>Control of Nonlinear Systems Using a Self-Organising Neural Network.</title>
+		<pages>113-123</pages>
+		<year>2000</year>
+		<volume>9</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>2</number>
+		<ee>http://dx.doi.org/10.1007/s005210070022</ee>
+		<url>db/journals/nca/nca9.html#Delgado00</url>
+	</article>
+	<article key="journals/nca/VenkatesanKS09" mdate="2009-12-11">
+		<author>D. Venkatesan</author>
+		<author>K. Kannan</author>
+		<author>R. Saravanan</author>
+		<title>A genetic algorithm-based artificial neural network model for the optimization of machining processes.</title>
+		<pages>135-140</pages>
+		<year>2009</year>
+		<volume>18</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>2</number>
+		<ee>http://dx.doi.org/10.1007/s00521-007-0166-y</ee>
+		<url>db/journals/nca/nca18.html#VenkatesanKS09</url>
+	</article>
+	<article key="journals/nca/Kodogiannis14" mdate="2014-07-11">
+		<author>V. S. Kodogiannis</author>
+		<title>Point-of-care diagnosis of bacterial pathogens in vitro, utilising an electronic nose and wavelet neural networks.</title>
+		<pages>353-366</pages>
+		<year>2014</year>
+		<volume>25</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>2</number>
+		<ee>http://dx.doi.org/10.1007/s00521-013-1494-8</ee>
+		<url>db/journals/nca/nca25.html#Kodogiannis14</url>
+	</article>
+	<article key="journals/nca/Neshat13" mdate="2014-02-24">
+		<author>Mehdi Neshat</author>
+		<title>FAIPSO: fuzzy adaptive informed particle swarm optimization.</title>
+		<pages>95-116</pages>
+		<year>2013</year>
+		<volume>23</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>Supplement-1</number>
+		<ee>http://dx.doi.org/10.1007/s00521-012-1256-z</ee>
+		<url>db/journals/nca/nca23.html#Neshat13</url>
+	</article>
+	<article key="journals/nca/LiYW15" mdate="2015-06-08">
+		<author>Yongkun Li</author>
+		<author>Li Yang</author>
+		<author>Wanqin Wu</author>
+		<title>Square-mean almost periodic solution for stochastic Hopfield neural networks with time-varying delays on timescales.</title>
+		<pages>1073-1084</pages>
+		<year>2015</year>
+		<volume>26</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>5</number>
+		<ee>http://dx.doi.org/10.1007/s00521-014-1784-9</ee>
+		<url>db/journals/nca/nca26.html#LiYW15</url>
+	</article>
+	<article key="journals/nca/ShenYSH11" mdate="2011-09-15">
+		<author>Furao Shen</author>
+		<author>Hui Yu</author>
+		<author>Keisuke Sakurai</author>
+		<author>Osamu Hasegawa</author>
+		<title>An incremental online semi-supervised active learning algorithm based on self-organizing incremental neural network.</title>
+		<pages>1061-1074</pages>
+		<year>2011</year>
+		<volume>20</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>7</number>
+		<ee>http://dx.doi.org/10.1007/s00521-010-0428-y</ee>
+		<url>db/journals/nca/nca20.html#ShenYSH11</url>
+	</article>
+	<article key="journals/nca/DongZP09" mdate="2009-12-11">
+		<author>Weiming Dong</author>
+		<author>Ning Zhou</author>
+		<author>Jean-Claude Paul</author>
+		<title>Robust tile-based texture synthesis using artificial immune system.</title>
+		<pages>223-235</pages>
+		<year>2009</year>
+		<volume>18</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>3</number>
+		<ee>http://dx.doi.org/10.1007/s00521-008-0174-6</ee>
+		<url>db/journals/nca/nca18.html#DongZP09</url>
+	</article>
+	<article key="journals/nca/PartridgeG95" mdate="2011-05-31">
+		<author>Derek Partridge</author>
+		<author>Niall Griffith</author>
+		<title>Strategies for Improving Neural Net Generalisation.</title>
+		<pages>27-37</pages>
+		<year>1995</year>
+		<volume>3</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>1</number>
+		<url>db/journals/nca/nca3.html#PartridgeG95</url>
+		<ee>http://dx.doi.org/10.1007/BF01414174</ee>
+	</article>
+	<article key="journals/nca/CelikkanatS10" mdate="2011-02-22">
+		<author>Hande celikkanat</author>
+		<author>Erol Sahin</author>
+		<title>Steering self-organized robot flocks through externally guided individuals.</title>
+		<pages>849-865</pages>
+		<year>2010</year>
+		<volume>19</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>6</number>
+		<ee>http://dx.doi.org/10.1007/s00521-010-0355-y</ee>
+		<url>db/journals/nca/nca19.html#CelikkanatS10</url>
+	</article>
+	<article key="journals/nca/BarattiCFP00" mdate="2011-05-31">
+		<author>Roberto Baratti</author>
+		<author>Barbara Cannas</author>
+		<author>Alessandra Fanni</author>
+		<author>Fabrizio Pilo</author>
+		<title>Automated Recurrent Neural Network Design to Model the Dynamics of Complex Systems.</title>
+		<pages>190-201</pages>
+		<year>2000</year>
+		<volume>9</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>3</number>
+		<ee>http://dx.doi.org/10.1007/s005210070012</ee>
+		<url>db/journals/nca/nca9.html#BarattiCFP00</url>
+	</article>
+	<article key="journals/nca/SheikhanR13" mdate="2013-11-08">
+		<author>Mansour Sheikhan</author>
+		<author>Maryam Sharifi Rad</author>
+		<title>Gravitational search algorithm-optimized neural misuse detector with selected features by fuzzy grids-based association rules mining.</title>
+		<pages>2451-2463</pages>
+		<year>2013</year>
+		<volume>23</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>7-8</number>
+		<ee>http://dx.doi.org/10.1007/s00521-012-1204-y</ee>
+		<url>db/journals/nca/nca23.html#SheikhanR13</url>
+	</article>
+	<article key="journals/nca/PrabhuUV15" mdate="2015-01-06">
+		<author>S. Prabhu</author>
+		<author>M. Uma</author>
+		<author>B. K. Vinayagam</author>
+		<title>Surface roughness prediction using Taguchi-fuzzy logic-neural network analysis for CNT nanofluids based grinding process.</title>
+		<pages>41-55</pages>
+		<year>2015</year>
+		<volume>26</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>1</number>
+		<ee>http://dx.doi.org/10.1007/s00521-014-1696-8</ee>
+		<url>db/journals/nca/nca26.html#PrabhuUV15</url>
+	</article>
+	<article key="journals/nca/SantosRCP12" mdate="2014-09-25">
+		<author>Antonino Santos</author>
+		<author>J. J. Romero</author>
+		<author>Adrian Carballal</author>
+		<author>A. Pazos</author>
+		<title>Framework of fully integrated hybrid systems.</title>
+		<pages>45-53</pages>
+		<year>2012</year>
+		<volume>21</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>1</number>
+		<ee>http://dx.doi.org/10.1007/s00521-011-0672-9</ee>
+		<url>db/journals/nca/nca21.html#SantosRCP12</url>
+	</article>
+	<article key="journals/nca/ZhouZC13" mdate="2013-07-24">
+		<author>Zheng Hua Zhou</author>
+		<author>Jian Wei Zhao</author>
+		<author>Fei-Long Cao</author>
+		<title>Surface reconstruction based on extreme learning machine.</title>
+		<pages>283-292</pages>
+		<year>2013</year>
+		<volume>23</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>2</number>
+		<ee>http://dx.doi.org/10.1007/s00521-012-0891-8</ee>
+		<url>db/journals/nca/nca23.html#ZhouZC13</url>
+	</article>
+	<article key="journals/nca/GhaffariY14" mdate="2014-03-12">
+		<author>Hamid Reza Ghaffari</author>
+		<author>Hadi Sadoghi Yazdi</author>
+		<title>Multiclass classifier based on boundary complexity.</title>
+		<pages>985-993</pages>
+		<year>2014</year>
+		<volume>24</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>5</number>
+		<ee>http://dx.doi.org/10.1007/s00521-012-1303-9</ee>
+		<url>db/journals/nca/nca24.html#GhaffariY14</url>
+	</article>
+	<article key="journals/nca/Perez-CruzRPS14" mdate="2014-09-03">
+		<author>J. Humberto Perez-Cruz</author>
+		<author>Jose de Jesus Rubio</author>
+		<author>Jaime Pacheco</author>
+		<author>Ezequiel Soriano</author>
+		<title>State estimation in MIMO nonlinear systems subject to unknown deadzones using recurrent neural networks.</title>
+		<pages>693-701</pages>
+		<year>2014</year>
+		<volume>25</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>3-4</number>
+		<ee>http://dx.doi.org/10.1007/s00521-013-1533-5</ee>
+		<url>db/journals/nca/nca25.html#Perez-CruzRPS14</url>
+	</article>
+	<article key="journals/nca/NilakantanPJK15" mdate="2015-07-24">
+		<author>J. Mukund Nilakantan</author>
+		<author>S. G. Ponnambalam</author>
+		<author>N. Jawahar</author>
+		<author>Ganesan Kanagaraj</author>
+		<title>Bio-inspired search algorithms to solve robotic assembly line balancing problems.</title>
+		<pages>1379-1393</pages>
+		<year>2015</year>
+		<volume>26</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>6</number>
+		<ee>http://dx.doi.org/10.1007/s00521-014-1811-x</ee>
+		<url>db/journals/nca/nca26.html#NilakantanPJK15</url>
+	</article>
+	<article key="journals/nca/HeCT06" mdate="2012-09-13">
+		<author>Taigang He</author>
+		<author>Gari D. Clifford</author>
+		<author>Lionel Tarassenko</author>
+		<title>Application of independent component analysis in removing artefacts from the electrocardiogram.</title>
+		<pages>105-116</pages>
+		<year>2006</year>
+		<volume>15</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>2</number>
+		<ee>http://dx.doi.org/10.1007/s00521-005-0013-y</ee>
+		<url>db/journals/nca/nca15.html#HeCT06</url>
+	</article>
+	<article key="journals/nca/EsfahanipourGJ16" mdate="2016-03-24">
+		<author>Akbar Esfahanipour</author>
+		<author>Milad Goodarzi</author>
+		<author>Reza Jahanbin</author>
+		<title>Analysis and forecasting of IPO underpricing.</title>
+		<pages>651-658</pages>
+		<year>2016</year>
+		<volume>27</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>3</number>
+		<ee>http://dx.doi.org/10.1007/s00521-015-1884-1</ee>
+		<url>db/journals/nca/nca27.html#EsfahanipourGJ16</url>
+	</article>
+	<article key="journals/nca/Mackenzie96" mdate="2011-05-31">
+		<author>Mathew David Mackenzie</author>
+		<title>Enhancements to the Dynamic Self-Organising Neural Network.</title>
+		<pages>44-57</pages>
+		<year>1996</year>
+		<volume>4</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>1</number>
+		<url>db/journals/nca/nca4.html#Mackenzie96</url>
+		<ee>http://dx.doi.org/10.1007/BF01413869</ee>
+	</article>
+	<article key="journals/nca/YangLXWL13" mdate="2013-09-24">
+		<author>Dongsheng Yang</author>
+		<author>Xinrui Liu</author>
+		<author>Yukun Xu</author>
+		<author>Yingchun Wang</author>
+		<author>Zhaobing Liu</author>
+		<title>State estimation of recurrent neural networks with interval time-varying delay: an improved delay-dependent approach.</title>
+		<pages>1149-1158</pages>
+		<year>2013</year>
+		<volume>23</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>3-4</number>
+		<ee>http://dx.doi.org/10.1007/s00521-012-1061-8</ee>
+		<url>db/journals/nca/nca23.html#YangLXWL13</url>
+	</article>
+	<article key="journals/nca/LiGVTO09" mdate="2009-12-11">
+		<author>Michael M. Li</author>
+		<author>William W. Guo</author>
+		<author>Brijesh Verma</author>
+		<author>Kevin Tickle</author>
+		<author>John O'Connor</author>
+		<title>Intelligent methods for solving inverse problems of backscattering spectra with noise: a comparison between neural networks and simulated annealing.</title>
+		<pages>423-430</pages>
+		<year>2009</year>
+		<volume>18</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>5</number>
+		<ee>http://dx.doi.org/10.1007/s00521-008-0219-x</ee>
+		<url>db/journals/nca/nca18.html#LiGVTO09</url>
+	</article>
+	<article key="journals/nca/FataiLA13" mdate="2014-02-24">
+		<author>Anifowose Fatai</author>
+		<author>Jane Labadin</author>
+		<author>Abdulazeez Abdulraheem</author>
+		<title>A least-square-driven functional networks type-2 fuzzy logic hybrid model for efficient petroleum reservoir properties prediction.</title>
+		<pages>179-190</pages>
+		<year>2013</year>
+		<volume>23</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>Supplement-1</number>
+		<ee>http://dx.doi.org/10.1007/s00521-012-1298-2</ee>
+		<url>db/journals/nca/nca23.html#FataiLA13</url>
+	</article>
+	<article key="journals/nca/HouNWYZ14" mdate="2014-05-16">
+		<author>Chenping Hou</author>
+		<author>Feiping Nie</author>
+		<author>Hua Wang</author>
+		<author>Dongyun Yi</author>
+		<author>Changshui Zhang</author>
+		<title>Learning high-dimensional correspondence via manifold learning and local approximation.</title>
+		<pages>1555-1568</pages>
+		<year>2014</year>
+		<volume>24</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>7-8</number>
+		<ee>http://dx.doi.org/10.1007/s00521-013-1369-z</ee>
+		<url>db/journals/nca/nca24.html#HouNWYZ14</url>
+	</article>
+	<article key="journals/nca/Turner07" mdate="2007-03-30">
+		<author>Paul Turner</author>
+		<title>Automated product grade transitions, exposing the inherent and latent dangers of neural networks in manufacturing process control: an industrial case study.</title>
+		<pages>27-32</pages>
+		<year>2007</year>
+		<volume>16</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>1</number>
+		<ee>http://dx.doi.org/10.1007/s00521-006-0038-x</ee>
+		<url>db/journals/nca/nca16.html#Turner07</url>
+	</article>
+	<article key="journals/nca/Ying16" mdate="2016-01-11">
+		<author>Li Ying</author>
+		<title>Orthogonal incremental extreme learning machine for regression and multiclass classification.</title>
+		<pages>111-120</pages>
+		<year>2016</year>
+		<volume>27</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>1</number>
+		<ee>http://dx.doi.org/10.1007/s00521-014-1567-3</ee>
+		<url>db/journals/nca/nca27.html#Ying16</url>
+	</article>
+	<article key="journals/nca/YinLHWH11" mdate="2011-09-15">
+		<author>Xu-Cheng Yin</author>
+		<author>Qian Liu</author>
+		<author>Hong-Wei Hao</author>
+		<author>Zhi-Bin Wang</author>
+		<author>Kaizhu Huang</author>
+		<title>FMI image based rock structure classification using classifier combination.</title>
+		<pages>955-963</pages>
+		<year>2011</year>
+		<volume>20</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>7</number>
+		<ee>http://dx.doi.org/10.1007/s00521-010-0395-3</ee>
+		<url>db/journals/nca/nca20.html#YinLHWH11</url>
+	</article>
+	<article key="journals/nca/Catak15" mdate="2015-01-26">
+		<author>Nursin Bas Catak</author>
+		<title>A novel stochastic mean filter based on Ornstein-Uhlenbeck process.</title>
+		<pages>391-397</pages>
+		<year>2015</year>
+		<volume>26</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>2</number>
+		<ee>http://dx.doi.org/10.1007/s00521-014-1734-6</ee>
+		<url>db/journals/nca/nca26.html#Catak15</url>
+	</article>
+	<article key="journals/nca/Chen14" mdate="2014-11-05">
+		<author>Chia-Chen Chen</author>
+		<title>RFID-based intelligent shopping environment: a comprehensive evaluation framework with neural computing approach.</title>
+		<pages>1685-1697</pages>
+		<year>2014</year>
+		<volume>25</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>7-8</number>
+		<ee>http://dx.doi.org/10.1007/s00521-014-1652-7</ee>
+		<url>db/journals/nca/nca25.html#Chen14</url>
+	</article>
+	<article key="journals/nca/ErtuncOA13" mdate="2014-02-24">
+		<author>Huseyin Metin Ertunc</author>
+		<author>Hasan Ocak</author>
+		<author>Cuneyt Aliustaoglu</author>
+		<title>ANN- and ANFIS-based multi-staged decision algorithm for the detection and diagnosis of bearing faults.</title>
+		<pages>435-446</pages>
+		<year>2013</year>
+		<volume>22</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>Supplement-1</number>
+		<ee>http://dx.doi.org/10.1007/s00521-012-0912-7</ee>
+		<url>db/journals/nca/nca22.html#ErtuncOA13</url>
+	</article>
+	<article key="journals/nca/YangHZW12" mdate="2012-02-24">
+		<author>Nanhai Yang</author>
+		<author>Ran He</author>
+		<author>Wei-Shi Zheng</author>
+		<author>Xiukun Wang</author>
+		<title>Robust large margin discriminant tangent analysis for face recognition.</title>
+		<pages>269-279</pages>
+		<year>2012</year>
+		<volume>21</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>2</number>
+		<ee>http://dx.doi.org/10.1007/s00521-011-0589-3</ee>
+		<url>db/journals/nca/nca21.html#YangHZW12</url>
+	</article>
+	<article key="journals/nca/Radcliffe93" mdate="2011-05-31">
+		<author>Nicholas J. Radcliffe</author>
+		<title>Genetic Set Recombination and Its Application to Neural Network Topology Optimisation.</title>
+		<pages>67-90</pages>
+		<year>1993</year>
+		<volume>1</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>1</number>
+		<url>db/journals/nca/nca1.html#Radcliffe93</url>
+		<ee>http://dx.doi.org/10.1007/BF01411376</ee>
+	</article>
+	<article key="journals/nca/NajafzadehA13" mdate="2013-11-08">
+		<author>Mohammad Najafzadeh</author>
+		<author>Hazi Mohammad Azamathulla</author>
+		<title>Group method of data handling to predict scour depth around bridge piers.</title>
+		<pages>2107-2112</pages>
+		<year>2013</year>
+		<volume>23</volume>
+		<journal>Neural Computing and Applications</journal>
+		<number>7-8</number>
+		<ee>http://dx.doi.org/10.1007/s00521-012-1160-6</ee>
+		<url>db/journals/nca/nca23.html#NajafzadehA13</url>
+	</article>
+</dblp>
