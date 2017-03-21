@@ -25,5 +25,14 @@ namespace _2IMW20_Project
             this.expectedVertexDegree = 0f;
             this.expectedTriangleDegree = 0f;
         }
+
+        public float GetVertexDiscrepancy()
+        {
+            return this.vertexDegree - this.expectedVertexDegree;
+        }
+        public float GetTriangleDiscrepancy()
+        {
+            return this.triangleDegree - this.expectedTriangleDegree;
+        }
     }
 }

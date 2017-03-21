@@ -11,9 +11,9 @@ namespace _2IMW20_Project
     {
         static void Main(string[] args)
         {
-            //bool exit = false;
-            //while (!exit)
-            //{
+            bool exit = false;
+            while (!exit)
+            {
             //    bool hasDataset = false;
             //    while (!hasDataset)
             //    {
@@ -29,44 +29,53 @@ namespace _2IMW20_Project
 
             //    // Parse data
 
-            //    // Execute algorithms:
 
-            //    Console.WriteLine("Executing Degree Based...");
-            //    Console.WriteLine("Completed Degree Based");
+                //Check parser
+                string location = "smallDblp.xml";
 
-            //    Console.WriteLine("Executing TRPW...");
-            //    Console.WriteLine("Completed TRPW");
+                //Following code is used to generate the dataset that will be used by Graph and algorithms
 
-
-            //    // Write results
+                dataset.RawData dataset = new dataset.RawDataDblp(location); //In the final version, location will be input from console.
+                dataset.BuildDataset();
 
 
+                //Now the dataset can be load by using following code:
+                dataset.GetNodes();
+                //This will return a dictionary contains all nodes, in form <string, int>
+                //The key of the dictionary will be the string from xml
+                //The value of each key will be the node ID
 
-            //    Console.WriteLine("Do you wish to try another dataset? (Y/N)");
+                dataset.GetEdges();
+                //This will return a dictionary contains all edges, in form <Edge, int>
+                //The edges are uncertain, contains an unique id, a vertix u and a vertix v
+                //The value represents the time an edge appears
+                //Also known as the weight of the edge
 
-            //    if (Console.ReadLine() == "N")
-            //        exit = true;
-            //}
 
-            //Check parser
-            string location = "smallDblp.xml";
+                // Execute algorithms:
 
-            //Following code is used to generate the dataset that will be used by Graph and algorithms
+                Console.WriteLine("Executing Degree Based...");
 
-            dataset.RawData dataset = new dataset.RawDataDblp(location); //In the final version, location will be input from console.
-            dataset.BuildDataset();
+                ADR ADRAlgorithm = new ADR(Graph.constructFromDataset(dataset));
+                ADRAlgorithm.Run();
 
-            //Now the dataset can be load by using following code:
-            dataset.GetNodes();
-            //This will return a dictionary contains all nodes, in form <string, int>
-            //The key of the dictionary will be the string from xml
-            //The value of each key will be the node ID
+                Console.WriteLine("Completed Degree Based");
 
-            dataset.GetEdges();
-            //This will return a dictionary contains all edges, in form <Edge, int>
-            //The edges are uncertain, contains an unique id, a vertix u and a vertix v
-            //The value represents the time an edge appears
-            //Also known as the weight of the edge
+                Console.WriteLine("Executing TRPW...");
+
+                TRPW TRPWAlgorithm = new TRPW(Graph.constructFromDataset(dataset));
+                TRPWAlgorithm.Run();
+
+                Console.WriteLine("Completed TRPW");
+
+
+                // Write results
+                
+                Console.WriteLine("Do you wish to try another dataset? (Y/N)");
+
+                if (Console.ReadLine() == "N")
+                    exit = true;
+                }
+            }
         }
-    }
 }

@@ -44,6 +44,9 @@ namespace _2IMW20_Project.graph
                 V[e.u].vertexDegree++;
                 V[e.v].vertexDegree++;
 
+                V[e.u].expectedVertexDegree += e.probability;
+                V[e.v].expectedVertexDegree += e.probability;
+
                 // TODO: Calculate triangle degree
             }
         }
@@ -67,6 +70,23 @@ namespace _2IMW20_Project.graph
         }
 
         /// <summary>
+        /// Remove an edge from the graph.
+        /// </summary>
+        /// <param name="e">The edge that is to be removed.</param>
+        public void RemoveEdge(Edge e)
+        {
+            // Add edge to the list
+            E.Remove(e);
+
+            // Update vertex degree
+            V[e.u].vertexDegree--;
+            V[e.v].vertexDegree--;
+
+            // TODO: Update triangle degree
+
+        }
+
+        /// <summary>
         /// Construct a graph from a dataset
         /// </summary>
         /// <param name="rawData">Raw data parsed from XML file</param>
@@ -74,7 +94,19 @@ namespace _2IMW20_Project.graph
         public static Graph constructFromDataset(dataset.RawData rawData)
         {
             Dictionary<int, Vertex> vertices = new Dictionary<int, Vertex>();
+            foreach (KeyValuePair<string, int> v in rawData.GetNodes())
+            {
+
+                vertices.Add(v.Value, new Vertex(v.Value));
+            }
+            
             List<Edge> edges = new List<Edge>();
+            foreach (KeyValuePair<Edge, int> e in rawData.GetEdges())
+            {
+                edges.Add(e.Key);
+                float probability = 1f - (float)Math.Pow(Math.E, (-0.5 * e.Value));
+                edges.Last().probability = probability;
+            }
 
             return new Graph(vertices, edges);
         }
