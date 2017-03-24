@@ -55,6 +55,5 @@ namespace _2IMW20_Project.parser
             return tempMap;
         }
 
-
     }
 }

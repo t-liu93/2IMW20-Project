@@ -31,7 +31,12 @@ namespace _2IMW20_Project
 
 
                 //Check parser
-                string location = "smallDblp.xml";
+                string location = "D:/DBLP.xml";
+
+                //Run tester and draw logs
+                //Test.DatasetTest datasetTest = new Test.DatasetTest(location);
+                //datasetTest.RunTest();
+                //Console.ReadKey();
 
                 //Following code is used to generate the dataset that will be used by Graph and algorithms
 
@@ -40,12 +45,12 @@ namespace _2IMW20_Project
 
 
                 //Now the dataset can be load by using following code:
-                dataset.GetNodes();
+                //dataset.GetNodes();
                 //This will return a dictionary contains all nodes, in form <string, int>
                 //The key of the dictionary will be the string from xml
                 //The value of each key will be the node ID
 
-                dataset.GetEdges();
+                //dataset.GetEdges();
                 //This will return a dictionary contains all edges, in form <Edge, int>
                 //The edges are uncertain, contains an unique id, a vertix u and a vertix v
                 //The value represents the time an edge appears

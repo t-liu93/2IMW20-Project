@@ -14,6 +14,7 @@ namespace _2IMW20_Project.dataset
     class RawDataDblp : RawData
     {
         private parser.Parser p; //New instance of an XML parser
+        private int articleNumber;
 
         /// <summary>
         /// Constructor
@@ -42,6 +43,7 @@ namespace _2IMW20_Project.dataset
         public void buildEdges()
         {
             System.Xml.XmlNodeList n = p.GetElementsByTagName("article");
+            this.articleNumber = n.Count;
             foreach(System.Xml.XmlElement element in n)
             {
                 if (GetQuantityOfTag(element, "author") > 1)
@@ -78,6 +80,15 @@ namespace _2IMW20_Project.dataset
         private int GetQuantityOfTag(System.Xml.XmlElement xmlElement, string tag)
         {
             return xmlElement.GetElementsByTagName(tag).Count;
+        }
+
+        /// <summary>
+        /// Return the article number in the dataset
+        /// </summary>
+        /// <returns>An integer contains the article number</returns>
+        public int GetArticleNumber()
+        {
+            return this.articleNumber;
         }
     }
 
