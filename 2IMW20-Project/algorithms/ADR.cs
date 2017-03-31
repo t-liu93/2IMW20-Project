@@ -9,12 +9,12 @@ namespace _2IMW20_Project
 {
     class ADR
     {
-        private Graph _graph;
+        private UncertainGraph _graph;
         private List<Edge> _edgeList; // Our current edge list
         private List<Edge> _edgeListDifference; // Constantly changing difference of the current edge list and the complete edge list
         private Random _random;
 
-        public ADR(Graph G)
+        public ADR(UncertainGraph G)
         {
             // Initialize algorithm
             _edgeList = new List<Edge>();

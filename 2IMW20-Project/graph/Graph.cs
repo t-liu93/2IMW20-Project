@@ -44,9 +44,6 @@ namespace _2IMW20_Project.graph
                 V[e.u].vertexDegree++;
                 V[e.v].vertexDegree++;
 
-                V[e.u].expectedVertexDegree += e.probability;
-                V[e.v].expectedVertexDegree += e.probability;
-
                 // TODO: Calculate triangle degree
             }
         }

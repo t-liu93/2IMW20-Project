@@ -67,7 +67,6 @@
     <Compile Include="dataset\RawData.cs" />
     <Compile Include="graph\Edge.cs" />
     <Compile Include="graph\Graph.cs" />
-    <Compile Include="graph\UncertainEdge.cs" />
     <Compile Include="graph\UncertainGraph.cs" />
     <Compile Include="parser\Parser.cs" />
     <Compile Include="dataset\RawDataDblp.cs" />

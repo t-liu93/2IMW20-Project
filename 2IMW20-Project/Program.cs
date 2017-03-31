@@ -61,14 +61,14 @@ namespace _2IMW20_Project
 
                 Console.WriteLine("Executing Degree Based...");
 
-                ADR ADRAlgorithm = new ADR(Graph.constructFromDataset(dataset));
+                ADR ADRAlgorithm = new ADR(UncertainGraph.constructFromDataset(dataset));
                 ADRAlgorithm.Run();
 
                 Console.WriteLine("Completed Degree Based");
 
                 Console.WriteLine("Executing TRPW...");
 
-                TRPW TRPWAlgorithm = new TRPW(Graph.constructFromDataset(dataset));
+                TRPW TRPWAlgorithm = new TRPW(UncertainGraph.constructFromDataset(dataset));
                 TRPWAlgorithm.Run();
 
                 Console.WriteLine("Completed TRPW");

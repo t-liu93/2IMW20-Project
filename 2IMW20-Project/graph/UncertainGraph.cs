@@ -27,12 +27,12 @@ namespace _2IMW20_Project.graph
             // Reset vertex and triangle degrees
             for (int i = 0; i < V.Count; i++)
             {
-                V[i].expectedVertexDegree = 0f;
+                V[i].expectedTriangleDegree = 0f;
                 V[i].expectedVertexDegree = 0f;
             }
 
             // Calculate the expected degree of the vertex
-            foreach (UncertainEdge e in E)
+            foreach (Edge e in E)
             {
                 V[e.u].expectedVertexDegree += e.probability;
                 V[e.v].expectedVertexDegree += e.probability;
@@ -46,14 +46,22 @@ namespace _2IMW20_Project.graph
         /// Construct a graph from a dataset
         /// </summary>
         /// <returns>The resulting graph</returns>
-        public static Graph constructFromDataset()
+        public static new UncertainGraph constructFromDataset(dataset.RawData rawData)
         {
-            // TODO: probability calculation
-
             Dictionary<int, Vertex> vertices = new Dictionary<int, Vertex>();
-            List<Edge> edges = new List<Edge>();
+            foreach (KeyValuePair<string, int> v in rawData.GetNodes())
+            {
 
-            // TODO: Calculate edge probability
+                vertices.Add(v.Value, new Vertex(v.Value));
+            }
+
+            List<Edge> edges = new List<Edge>();
+            foreach (KeyValuePair<Edge, int> e in rawData.GetEdges())
+            {
+                edges.Add(e.Key);
+                float probability = 1f - (float)Math.Pow(Math.E, (-0.5 * e.Value));
+                edges.Last().probability = probability;
+            }
 
             return new UncertainGraph(vertices, edges);
         }
