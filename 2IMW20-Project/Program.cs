@@ -31,7 +31,15 @@ namespace _2IMW20_Project
 
 
                 //Check parser
-                string location = "D:/DBLP.xml";
+                string dblplocation = "D:/DBLP.xml";
+                string snapLocation = "D:/Email-Enron.txt";
+                dataset.RawData data = new dataset.RawDataSNAP(snapLocation);
+                data.BuildDataset();
+                foreach (KeyValuePair<Edge, int> kvp in data.GetEdges())
+                {
+                    Console.WriteLine("Edge number: " + kvp.Key.id + "u: " + kvp.Key.u + "v: " + kvp.Key.v + "app: " + kvp.Value);
+                }
+                Console.ReadKey();
 
                 //Run tester and draw logs
                 //Test.DatasetTest datasetTest = new Test.DatasetTest(location);
@@ -40,7 +48,7 @@ namespace _2IMW20_Project
 
                 //Following code is used to generate the dataset that will be used by Graph and algorithms
 
-                dataset.RawData dataset = new dataset.RawDataDblp(location); //In the final version, location will be input from console.
+                dataset.RawData dataset = new dataset.RawDataDblp(dblplocation); //In the final version, location will be input from console.
                 dataset.BuildDataset();
 
 

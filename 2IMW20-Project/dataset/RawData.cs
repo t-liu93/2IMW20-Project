@@ -40,7 +40,7 @@ namespace _2IMW20_Project.dataset
         {
             if (!nodes.ContainsKey(key))
             {
-                nodes.Add(key, GetMaxNodeId(nodes) + 1);
+                this.nodes.Add(key, GetMaxNodeId(nodes) + 1);
             }
         }
 

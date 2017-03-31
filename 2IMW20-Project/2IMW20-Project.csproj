@@ -65,11 +65,13 @@
   <ItemGroup>
     <Compile Include="algorithms\ADR.cs" />
     <Compile Include="dataset\RawData.cs" />
+    <Compile Include="dataset\RawDataSNAP.cs" />
     <Compile Include="graph\Edge.cs" />
     <Compile Include="graph\Graph.cs" />
     <Compile Include="graph\UncertainGraph.cs" />
     <Compile Include="parser\Parser.cs" />
     <Compile Include="dataset\RawDataDblp.cs" />
+    <Compile Include="parser\SNAPParser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="graph\Vertex.cs" />
