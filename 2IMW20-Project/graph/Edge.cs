@@ -19,6 +19,5 @@ namespace _2IMW20_Project
             this.u = u;
             this.v = v;
         }
-
     }
 }

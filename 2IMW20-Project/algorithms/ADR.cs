@@ -10,6 +10,8 @@ namespace _2IMW20_Project
     class ADR
     {
         private UncertainGraph _graph;
+        private Graph _reprGraph;
+        private float expectedDegree;
         private List<Edge> _edgeList; // Our current edge list
         private List<Edge> _edgeListDifference; // Constantly changing difference of the current edge list and the complete edge list
         private Random _random;
@@ -51,9 +53,10 @@ namespace _2IMW20_Project
             {
                 P += e.probability;
             }
+            expectedDegree = P;
 
             // Sort edges according to their probability (3)
-            List<Edge> sortedGraphEdges = _graph.E.OrderBy(e => ((Edge)e).probability).ToList();
+            List<Edge> sortedGraphEdges = _graph.E.OrderByDescending(e => ((Edge)e).probability).ToList();
 
             // Loop edges untill we reach the expected amount of edges (4)
             _edgeListDifference = sortedGraphEdges.Except(_edgeList).ToList();
@@ -73,8 +76,8 @@ namespace _2IMW20_Project
                     next = 0;
                 }
             }
-            _graph.E = _edgeList;
-            _graph.CalculateDegrees();
+
+            _reprGraph = new Graph(_graph.V, _edgeList);
             
 
             // Phase 2
@@ -82,7 +85,7 @@ namespace _2IMW20_Project
             int steps = 100; // what is steps?
             for (i = 1; i < steps; i++) // (9)
             {
-                foreach (Vertex u in _graph.V.Values)
+                foreach (Vertex u in _reprGraph.V.Values)
                 {
                     _edgeListDifference = sortedGraphEdges.Except(_edgeList).ToList();
 
@@ -90,18 +93,45 @@ namespace _2IMW20_Project
                     Edge e1 = _edgeList.ElementAt(_random.Next(0, _edgeList.Count())); //Random edge with vertex u
                     Edge e2 = _edgeListDifference.ElementAt(_random.Next(0, _edgeListDifference.Count()));
 
-                    Double d1 = EquationOne(_graph.V[e1.u], _graph.V[e1.v]);
-                    Double d2 = EquationTwo(_graph.V[e2.u], _graph.V[e2.v]);
+                    Double d1 = EquationOne(_reprGraph.V[e1.u], _reprGraph.V[e1.v]);
+                    Double d2 = EquationTwo(_reprGraph.V[e2.u], _reprGraph.V[e2.v]);
                     
 
                     if (d1 + d2 < 0) // (14)
                     {
-                        _graph.RemoveEdge(e1);
-                        _graph.AddEdge(e2);
+                        _reprGraph.RemoveEdge(e1);
+                        _reprGraph.AddEdge(e2);
                     }
                 }
             }
-            //Return an approximate degree-based representative possible world of G
+        }
+
+        public void PrintResults()
+        {
+            Console.WriteLine("Uncertain Graph : ");
+            Console.WriteLine("Amount of Vertices  : " + _graph.V.Count());
+            Console.WriteLine("Amount of Edges  : " + _graph.E.Count());
+            Console.WriteLine("Expected Degree  : " + ((expectedDegree / _graph.V.Count()) * 2) + "\n");
+
+            float triangleDegree = 0f;
+            foreach (Vertex v in _graph.V.Values)
+            {
+                triangleDegree += v.expectedTriangleDegree;
+            }
+
+            Console.WriteLine("Expected Triangle Degree  : " + ((triangleDegree / _graph.V.Count())) + "\n");
+
+            Console.WriteLine("Representative Graph : ");
+            Console.WriteLine("Amount of Edges  : " + _reprGraph.E.Count());
+            Console.WriteLine("Actual Degree  : " + (((float)_reprGraph.E.Count() / (float)_reprGraph.V.Count()) * 2) + "\n");
+            triangleDegree = 0f;
+            foreach (Vertex v in _reprGraph.V.Values)
+            {
+                triangleDegree += v.triangleDegree;
+            }
+            Console.WriteLine("Actual Triangle Degree  : " + ((triangleDegree / _graph.V.Count())) + "\n");
+
+
         }
     }
 }

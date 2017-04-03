@@ -22,6 +22,17 @@ namespace _2IMW20_Project.graph
             this.V = V;
             this.E = E;
 
+            foreach (Vertex v in V.Values)
+            {
+                v.neighbours = new Dictionary<int, float>();
+            }
+
+            foreach (Edge e in E)
+            {
+                V[e.u].AddEdgeToVertex(e.v, e.probability);
+                V[e.v].AddEdgeToVertex(e.u, e.probability);
+            }
+
             // Calculate vertex and triangle degrees
             CalculateDegrees();
         }
@@ -38,13 +49,22 @@ namespace _2IMW20_Project.graph
                 V[i].triangleDegree = 0;
             }
 
-            // Calculate the expected degree of the vertex
+            // Calculate the expected degree of both vertices
+            
             foreach (Edge e in E)
             {
                 V[e.u].vertexDegree++;
                 V[e.v].vertexDegree++;
 
-                // TODO: Calculate triangle degree
+                // Calculate triangle degree of both vertices
+                foreach (int neighbour in V[e.u].neighbours.Keys)
+                {
+                    if (V[e.v].neighbours.ContainsKey(neighbour))
+                    {
+                        V[e.u].triangleDegree += 0.5f;
+                        V[e.v].triangleDegree += 0.5f;
+                    }
+                }
             }
         }
 
@@ -53,7 +73,7 @@ namespace _2IMW20_Project.graph
         /// Add an edge to the graph.
         /// </summary>
         /// <param name="e">The edge that is to be added.</param>
-        public void AddEdge(Edge e)
+        public virtual void AddEdge(Edge e)
         {
             // Add edge to the list
             E.Add(e);
@@ -62,15 +82,26 @@ namespace _2IMW20_Project.graph
             V[e.u].vertexDegree++;
             V[e.v].vertexDegree++;
 
-            // TODO: Update triangle degree
+            V[e.u].AddEdgeToVertex(e.v, e.probability);
+            V[e.v].AddEdgeToVertex(e.u, e.probability);
 
+            // TODO: Update triangle degree
+            foreach (int neighbour in V[e.u].neighbours.Keys)
+            {
+                if (V[e.v].neighbours.ContainsKey(neighbour))
+                {
+                    V[e.u].triangleDegree++;
+                    V[neighbour].triangleDegree++;
+                    V[e.v].triangleDegree++;
+                }
+            }
         }
 
         /// <summary>
         /// Remove an edge from the graph.
         /// </summary>
         /// <param name="e">The edge that is to be removed.</param>
-        public void RemoveEdge(Edge e)
+        public virtual void RemoveEdge(Edge e)
         {
             // Add edge to the list
             E.Remove(e);
@@ -79,8 +110,19 @@ namespace _2IMW20_Project.graph
             V[e.u].vertexDegree--;
             V[e.v].vertexDegree--;
 
-            // TODO: Update triangle degree
+            // Update triangle degree
+            foreach (int neighbour in V[e.u].neighbours.Keys)
+            {
+                if (V[e.v].neighbours.ContainsKey(neighbour))
+                {
+                    V[e.u].triangleDegree--;
+                    V[neighbour].triangleDegree--;
+                    V[e.v].triangleDegree--;
+                }
+            }
 
+            V[e.u].RemoveEdge(e.v);
+            V[e.v].RemoveEdge(e.u);
         }
 
         /// <summary>

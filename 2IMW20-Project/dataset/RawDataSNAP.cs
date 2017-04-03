@@ -39,7 +39,7 @@ namespace _2IMW20_Project.dataset
         {
             foreach(Edge element in snap.GetEdges())
             {
-                Console.WriteLine(element.u);
+                //Console.WriteLine(element.u);
                 base.AddEdge(element.u, element.v);
             }
         }

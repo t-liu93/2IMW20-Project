@@ -90,7 +90,7 @@ namespace _2IMW20_Project.dataset
         /// <returns></returns>
         private int GetMaxNodeId(Dictionary<string, int> dic)
         {
-            int max = 0;
+            int max = -1;
             foreach(KeyValuePair<string, int> kvp in dic)
             {
                 if (kvp.Value >= max)

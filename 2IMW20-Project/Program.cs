@@ -31,15 +31,15 @@ namespace _2IMW20_Project
 
 
                 //Check parser
-                string dblplocation = "D:/DBLP.xml";
-                string snapLocation = "D:/Email-Enron.txt";
-                dataset.RawData data = new dataset.RawDataSNAP(snapLocation);
-                data.BuildDataset();
-                foreach (KeyValuePair<Edge, int> kvp in data.GetEdges())
-                {
-                    Console.WriteLine("Edge number: " + kvp.Key.id + "u: " + kvp.Key.u + "v: " + kvp.Key.v + "app: " + kvp.Value);
-                }
-                Console.ReadKey();
+                string dblplocation = "Data//smallDblp.xml";
+                string snapLocation = "Data//Email-Enron.txt";
+                //dataset.RawData data = new dataset.RawDataSNAP(snapLocation);
+                //data.BuildDataset();
+                //foreach (KeyValuePair<Edge, int> kvp in data.GetEdges())
+                //{
+                //    Console.WriteLine("Edge number: " + kvp.Key.id + "u: " + kvp.Key.u + "v: " + kvp.Key.v + "app: " + kvp.Value);
+                //}
+                //Console.ReadKey();
 
                 //Run tester and draw logs
                 //Test.DatasetTest datasetTest = new Test.DatasetTest(location);
@@ -71,6 +71,7 @@ namespace _2IMW20_Project
 
                 ADR ADRAlgorithm = new ADR(UncertainGraph.constructFromDataset(dataset));
                 ADRAlgorithm.Run();
+                ADRAlgorithm.PrintResults();
 
                 Console.WriteLine("Completed Degree Based");
 
@@ -78,6 +79,7 @@ namespace _2IMW20_Project
 
                 TRPW TRPWAlgorithm = new TRPW(UncertainGraph.constructFromDataset(dataset));
                 TRPWAlgorithm.Run();
+                TRPWAlgorithm.PrintResults();
 
                 Console.WriteLine("Completed TRPW");
 
