@@ -77,10 +77,13 @@
     <Compile Include="graph\Vertex.cs" />
     <Compile Include="algorithms\TRPW.cs" />
     <Compile Include="Test\DatasetTest.cs" />
+    <Compile Include="WriteFile\CsvWriterADR.cs" />
+    <Compile Include="WriteFile\CsvWriterTRPW.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

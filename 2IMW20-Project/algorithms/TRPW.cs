@@ -166,11 +166,14 @@ namespace _2IMW20_Project
             Console.WriteLine("Amount of Vertices  : " + _graph.V.Count());
             Console.WriteLine("Amount of Edges  : " + _graph.E.Count());
             Console.WriteLine("Expected Degree  : " + ((expectedDegree / _graph.V.Count())) + "\n");
+            WriteFile.CsvWriterTRPW csvWriter = new WriteFile.CsvWriterTRPW();
 
             float triangleDegree = 0f;
             foreach (Vertex v in _graph.V.Values)
             {
                 triangleDegree += v.expectedTriangleDegree;
+                csvWriter.AppendExpectedDegree(string.Format("{0}, {1}", v.id, v.expectedVertexDegree));
+                csvWriter.AppendExpectedTriangleDegree(string.Format("{0}, {1}", v.id, v.expectedTriangleDegree));
             }
 
             Console.WriteLine("Expected Triangle Degree  : " + ((triangleDegree / _graph.V.Count())) + "\n");
@@ -182,10 +185,12 @@ namespace _2IMW20_Project
             foreach (Vertex v in _reprGraph.V.Values)
             {
                 triangleDegree += v.triangleDegree;
+                csvWriter.AppendActualDegree(string.Format("{0}, {1}", v.id, v.vertexDegree));
+                csvWriter.AppendActualTriangleDegree(string.Format("{0}, {1}", v.id, v.triangleDegree));
             }
             Console.WriteLine("Actual Triangle Degree  : " + ((triangleDegree / _graph.V.Count())) + "\n");
 
-
+            csvWriter.WriteFile();
         }
     }
 }

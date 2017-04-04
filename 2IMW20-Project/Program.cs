@@ -14,25 +14,27 @@ namespace _2IMW20_Project
             bool exit = false;
             while (!exit)
             {
-            //    bool hasDataset = false;
-            //    while (!hasDataset)
-            //    {
-            //        Console.WriteLine("Please specify a dataset:");
-            //        string datasetPath = Console.ReadLine();
+                //    bool hasDataset = false;
+                //    while (!hasDataset)
+                //    {
+                //        Console.WriteLine("Please specify a dataset:");
+                //        string datasetPath = Console.ReadLine();
 
-            //        if (datasetPath != "") // TODO: Check whether dataset exists & is valid
-            //            hasDataset = true;
-            //        else
-            //            Console.WriteLine("Invalid path!");
-            //    }
+                //        if (datasetPath != "") // TODO: Check whether dataset exists & is valid
+                //            hasDataset = true;
+                //        else
+                //            Console.WriteLine("Invalid path!");
+                //    }
 
 
-            //    // Parse data
+                //    // Parse data
 
 
                 //Check parser
-                string dblplocation = "Data//smallDblp.xml";
-                string snapLocation = "Data//Email-Enron.txt";
+                string smallDblp = "Data//smallDblp.xml";
+                string simpleDblp = "Data//dblp.xml";
+                string facebook = "Data//facebook_combined.txt";
+                string p2p08 = "Data//p2p-Gnutella08.txt";
                 //dataset.RawData data = new dataset.RawDataSNAP(snapLocation);
                 //data.BuildDataset();
                 //foreach (KeyValuePair<Edge, int> kvp in data.GetEdges())
@@ -47,9 +49,12 @@ namespace _2IMW20_Project
                 //Console.ReadKey();
 
                 //Following code is used to generate the dataset that will be used by Graph and algorithms
-
-                dataset.RawData dataset = new dataset.RawDataDblp(dblplocation); //In the final version, location will be input from console.
+                Console.WriteLine("Start build dataset...");
+                dataset.RawData dataset = new dataset.RawDataDblp(smallDblp); //In the final version, location will be input from console.
+                //dataset.RawData dataset = new dataset.RawDataSNAP(p2p08);
                 dataset.BuildDataset();
+
+                Console.WriteLine("Dataset build finished.");
 
 
                 //Now the dataset can be load by using following code:
