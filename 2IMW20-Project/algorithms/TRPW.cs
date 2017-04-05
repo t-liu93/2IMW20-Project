@@ -197,6 +197,7 @@ namespace _2IMW20_Project
             Console.WriteLine("Amount of Edges  : " + _reprGraph.E.Count());
             Console.WriteLine("Actual Degree  : " + (((float)_reprGraph.E.Count() / (float)_reprGraph.V.Count()) * 2) + "\n");
             triangleDegree = 0f;
+            clusteringCoefficient = 0f;
             foreach (Vertex v in _reprGraph.V.Values)
             {
                 triangleDegree += v.triangleDegree;
