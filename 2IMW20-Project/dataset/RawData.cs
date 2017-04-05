@@ -210,10 +210,12 @@ namespace _2IMW20_Project.dataset
 
 		private long Hash(int u, int v)
 		{
-			var A = (ulong)(u >= 0 ? 2 * (long)u : -2 * (long)u - 1);
-			var B = (ulong)(v >= 0 ? 2 * (long)v : -2 * (long)v - 1);
+            int a = Math.Min(u, v);
+            int b = Math.Max(u, v);
+			var A = (ulong)(a >= 0 ? 2 * (long)a : -2 * (long)a - 1);
+			var B = (ulong)(b >= 0 ? 2 * (long)b : -2 * (long)b - 1);
 			var C = (long)((A >= B ? A * A + A + B : A + B * B) / 2);
-			return u < 0 && v< 0 || u >= 0 && v >= 0 ? C : -C - 1;
+			return a < 0 && b< 0 || a >= 0 && b >= 0 ? C : -C - 1;
 		}
     }
 }
