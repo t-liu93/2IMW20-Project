@@ -9,7 +9,7 @@ namespace _2IMW20_Project
     class Vertex
     {
         public int id;
-        public Dictionary<int, float> neighbours;
+        public Dictionary<int, Edge> neighbours;
 
         public int vertexDegree;
         public float triangleDegree;
@@ -32,7 +32,7 @@ namespace _2IMW20_Project
 
             this.clusteringCoefficient = 0f;
             this.expectedClusteringCoefficient = 0f;
-            this.neighbours = new Dictionary<int, float>();
+            this.neighbours = new Dictionary<int, Edge>();
         }
 
         public float GetVertexDiscrepancy()
@@ -45,9 +45,9 @@ namespace _2IMW20_Project
             return this.triangleDegree - this.expectedTriangleDegree;
         }
 
-        public void AddEdgeToVertex(int vertexId, float probability)
+        public void AddEdgeToVertex(int vertexId, Edge edge)
         {
-            neighbours.Add(vertexId, probability);
+            neighbours.Add(vertexId, edge);
         }
 
         public void RemoveEdge(int vertexId)

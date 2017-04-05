@@ -90,16 +90,16 @@ namespace _2IMW20_Project
             Edge e2 = null;
             Double d1 = 0.0;
             Double d2 = 0.0;
-            int steps = 1000; // what is steps?
+            int steps = 100; // what is steps?
             for (i = 1; i < steps; i++) // (9)
             {
                 for (int j = 0; j < _reprGraph.V.Values.Count(); j++)
                 {
                     if (_reprGraph.V[j].neighbours.Count() == 0)
                         continue;
-                    
+
                     //Find all edges with vertex u and take one random edge from this
-                    e1 = _reprGraph.E.Where(edge => edge.u == _reprGraph.V[j].id || edge.v == _reprGraph.V[j].id).ElementAt(_random.Next(_reprGraph.V[j].neighbours.Count() - 1));
+                    e1 = _reprGraph.V[j].neighbours.ElementAt(_random.Next(_reprGraph.V[j].neighbours.Count())).Value;//_reprGraph.E.Where(edge => edge.u == _reprGraph.V[j].id || edge.v == _reprGraph.V[j].id).ElementAt(_random.Next(_reprGraph.V[j].neighbours.Count() - 1));
                     e2 = _edgeListDifference.ElementAt(_random.Next(0, _edgeListDifference.Count()));
 
                     d1 = EquationOne(_reprGraph.V[e1.u], _reprGraph.V[e1.v]);

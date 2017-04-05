@@ -24,13 +24,13 @@ namespace _2IMW20_Project.graph
 
             foreach (Vertex v in V.Values)
             {
-                v.neighbours = new Dictionary<int, float>();
+                v.neighbours = new Dictionary<int, Edge>();
             }
 
             foreach (Edge e in E)
             {
-                V[e.u].AddEdgeToVertex(e.v, e.probability);
-                V[e.v].AddEdgeToVertex(e.u, e.probability);
+                V[e.u].AddEdgeToVertex(e.v, e);
+                V[e.v].AddEdgeToVertex(e.u, e);
             }
 
             //Calculate vertex and triangle degrees
@@ -83,8 +83,8 @@ namespace _2IMW20_Project.graph
             V[e.u].vertexDegree++;
             V[e.v].vertexDegree++;
 
-            V[e.u].AddEdgeToVertex(e.v, e.probability);
-            V[e.v].AddEdgeToVertex(e.u, e.probability);
+            V[e.u].AddEdgeToVertex(e.v, e);
+            V[e.v].AddEdgeToVertex(e.u, e);
 
             // TODO: Update triangle degree
             foreach (int neighbour in V[e.u].neighbours.Keys)
@@ -139,12 +139,14 @@ namespace _2IMW20_Project.graph
 
                 vertices.Add(v.Value, new Vertex(v.Value));
             }
-            
+
             List<Edge> edges = new List<Edge>();
-            foreach (KeyValuePair<Edge, int> e in rawData.GetEdges())
+
+            Dictionary<long, int> counters = rawData.GetEdgesCount();
+            foreach (KeyValuePair<long, Edge> e in rawData.GetEdges())
             {
-                edges.Add(e.Key);
-                float probability = 1f - (float)Math.Pow(Math.E, (-0.5 * e.Value));
+                edges.Add(e.Value);
+                float probability = 1f - (float)Math.Pow(Math.E, (-0.5 * counters[e.Key]));
                 edges.Last().probability = probability;
             }
 

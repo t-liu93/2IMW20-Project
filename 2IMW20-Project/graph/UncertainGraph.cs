@@ -38,12 +38,12 @@ namespace _2IMW20_Project.graph
                 V[e.v].expectedVertexDegree += e.probability;
 
                 // Calculate triangle degrees
-                foreach (KeyValuePair<int, float> neighbour in V[e.u].neighbours)
+                foreach (KeyValuePair<int, Edge> neighbour in V[e.u].neighbours)
                 {
                     if (V[e.v].neighbours.ContainsKey(neighbour.Key))
                     {
                         //calculate triangle probability by multiplying all edge probabilities of the triangle
-                        float triangleProbability = e.probability * neighbour.Value * V[e.v].neighbours[neighbour.Key];
+                        float triangleProbability = e.probability * neighbour.Value.probability * V[e.v].neighbours[neighbour.Key].probability;
 
                         //We find the same triangle multiple times, so we only add the value for the current edge
                         V[e.u].expectedTriangleDegree += (0.5f * triangleProbability);
@@ -67,16 +67,16 @@ namespace _2IMW20_Project.graph
             V[e.u].vertexDegree++;
             V[e.v].vertexDegree++;
 
-            V[e.u].AddEdgeToVertex(e.v, e.probability);
-            V[e.v].AddEdgeToVertex(e.u, e.probability);
+            V[e.u].AddEdgeToVertex(e.v, e);
+            V[e.v].AddEdgeToVertex(e.u, e);
 
             // Update triangle degree
-            foreach (KeyValuePair<int, float> neighbour in V[e.u].neighbours)
+            foreach (KeyValuePair<int, Edge> neighbour in V[e.u].neighbours)
             {
                 if (V[e.v].neighbours.ContainsKey(neighbour.Key))
                 {
                     //calculate triangle probability by multiplying all edge probabilities of the triangle
-                    float triangleProbability = e.probability * neighbour.Value * V[e.v].neighbours[neighbour.Key];
+                    float triangleProbability = e.probability * neighbour.Value.probability * V[e.v].neighbours[neighbour.Key].probability;
 
                     V[e.u].expectedTriangleDegree += triangleProbability;
                     V[neighbour.Key].expectedTriangleDegree += triangleProbability;
@@ -99,12 +99,12 @@ namespace _2IMW20_Project.graph
             V[e.v].vertexDegree--;
 
             // Update triangle degree
-            foreach (KeyValuePair<int, float> neighbour in V[e.u].neighbours)
+            foreach (KeyValuePair<int, Edge> neighbour in V[e.u].neighbours)
             {
                 if (V[e.v].neighbours.ContainsKey(neighbour.Key))
                 {
                     //calculate triangle probability by multiplying all edge probabilities of the triangle
-                    float triangleProbability = e.probability * neighbour.Value * V[e.v].neighbours[neighbour.Key];
+                    float triangleProbability = e.probability * neighbour.Value.probability * V[e.v].neighbours[neighbour.Key].probability;
 
                     V[e.u].expectedTriangleDegree -= triangleProbability;
                     V[neighbour.Key].expectedTriangleDegree -= triangleProbability;
@@ -130,12 +130,15 @@ namespace _2IMW20_Project.graph
             }
 
             List<Edge> edges = new List<Edge>();
-            foreach (KeyValuePair<Edge, int> e in rawData.GetEdges())
+
+            Dictionary<long, int> counters = rawData.GetEdgesCount();
+            foreach (KeyValuePair<long, Edge> e in rawData.GetEdges())
             {
-                edges.Add(e.Key);
-                float probability = 1f - (float)Math.Pow(Math.E, (-0.5 * e.Value));
+                edges.Add(e.Value);
+                float probability = 1f - (float)Math.Pow(Math.E, (-0.5 * counters[e.Key]));
                 edges.Last().probability = probability;
             }
+
             return new UncertainGraph(vertices, edges);
         }
     }
