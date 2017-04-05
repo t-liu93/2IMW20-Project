@@ -90,7 +90,7 @@ namespace _2IMW20_Project
             Edge e2 = null;
             Double d1 = 0.0;
             Double d2 = 0.0;
-            int steps = 100; // what is steps?
+            int steps = 1000; // what is steps?
             for (i = 1; i < steps; i++) // (9)
             {
                 for (int j = 0; j < _reprGraph.V.Values.Count(); j++)
