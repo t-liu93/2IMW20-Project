@@ -35,6 +35,8 @@ namespace _2IMW20_Project
                 string simpleDblp = "Data//dblp.xml";
                 string facebook = "Data//facebook_combined.txt";
                 string p2p08 = "Data//p2p-Gnutella08.txt";
+				string onemDblp = "Data//1MDBLP.xml";
+				string email = "Data/email-Enron.txt";
                 //dataset.RawData data = new dataset.RawDataSNAP(snapLocation);
                 //data.BuildDataset();
                 //foreach (KeyValuePair<Edge, int> kvp in data.GetEdges())
@@ -50,9 +52,9 @@ namespace _2IMW20_Project
 
                 //Following code is used to generate the dataset that will be used by Graph and algorithms
                 Console.WriteLine("Start build dataset...");
-                dataset.RawData dataset = new dataset.RawDataDblp(smallDblp); //In the final version, location will be input from console.
-                //dataset.RawData dataset = new dataset.RawDataSNAP(p2p08);
-                dataset.BuildDataset();
+                //dataset.RawData data = new dataset.RawDataDblp(smallDblp); //In the final version, location will be input from console.
+                dataset.RawData data = new dataset.RawDataSNAP(facebook);
+                data.BuildDataset();
 
                 Console.WriteLine("Dataset build finished.");
 
@@ -74,7 +76,7 @@ namespace _2IMW20_Project
 
                 Console.WriteLine("Executing Degree Based...");
 
-                ADR ADRAlgorithm = new ADR(UncertainGraph.constructFromDataset(dataset));
+                ADR ADRAlgorithm = new ADR(UncertainGraph.constructFromDataset(data));
                 ADRAlgorithm.Run();
                 ADRAlgorithm.PrintResults();
 
@@ -82,7 +84,7 @@ namespace _2IMW20_Project
 
                 Console.WriteLine("Executing TRPW...");
 
-                TRPW TRPWAlgorithm = new TRPW(UncertainGraph.constructFromDataset(dataset));
+                TRPW TRPWAlgorithm = new TRPW(UncertainGraph.constructFromDataset(data));
                 TRPWAlgorithm.Run();
                 TRPWAlgorithm.PrintResults();
 

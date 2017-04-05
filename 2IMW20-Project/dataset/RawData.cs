@@ -14,13 +14,17 @@ namespace _2IMW20_Project.dataset
     class RawData
     {
         protected Dictionary<string, int> nodes; //Nodes, key string, value integer ID
+		protected Dictionary<long, Edge> hashedEdges; //Edges, with hashed edge id
         protected Dictionary<Edge, int> edges; //Edges, key Edge, value integer counter, a.k.a. times appear
+        protected int edgeIdCounter;
         protected string location; //Dataset location
 
         public RawData(string location)
         {
             this.nodes = new Dictionary<string, int>();
             this.edges = new Dictionary<Edge, int>();
+			this.hashedEdges = new Dictionary<long, Edge>();
+            this.edgeIdCounter = 0;
             this.location = location;
         }
 
@@ -51,15 +55,25 @@ namespace _2IMW20_Project.dataset
         /// <param name="v">vertix v of the edge</param>
         public void AddEdge(int u, int v)
         {
-            int i = GetEdgeId(u, v);
-            if (i != -1)
+            //int i = GetEdgeId(u, v);
+            //if (i != -1)
+            //{
+            //    Edge e = GetEdgeById(i);
+            //    edges[e]++;
+            //}
+            //else
+            //{
+            //    edges.Add(new Edge(GetMaxEdgeId(this.edges) + 1, u, v), 1);
+            //}
+            long hashedId = Hash(u, v);
+            if (hashedEdges.ContainsKey(hashedId))
             {
-                Edge e = GetEdgeById(i);
-                edges[e]++;
+                edges[hashedEdges[hashedId]]++;
             }
             else
             {
-                edges.Add(new Edge(GetMaxEdgeId(this.edges) + 1, u, v), 1);
+                hashedEdges.Add(hashedId, new Edge(edgeIdCounter++, u, v));
+                edges.Add(hashedEdges[hashedId], 1);
             }
         }
 
@@ -193,5 +207,13 @@ namespace _2IMW20_Project.dataset
             }
             return e;
         }
+
+		private long Hash(int u, int v)
+		{
+			var A = (ulong)(u >= 0 ? 2 * (long)u : -2 * (long)u - 1);
+			var B = (ulong)(v >= 0 ? 2 * (long)v : -2 * (long)v - 1);
+			var C = (long)((A >= B ? A * A + A + B : A + B * B) / 2);
+			return u < 0 && v< 0 || u >= 0 && v >= 0 ? C : -C - 1;
+		}
     }
 }
