@@ -176,6 +176,7 @@ namespace _2IMW20_Project
             Console.WriteLine("Amount of Vertices  : " + _graph.V.Count());
             Console.WriteLine("Amount of Edges  : " + _graph.E.Count());
             Console.WriteLine("Expected Degree  : " + ((expectedDegree / _graph.V.Count())) + "\n");
+            WriteFile.CsvWriterTRPW csvWriter = new WriteFile.CsvWriterTRPW();
 
             float triangleDegree = 0f;
             float clusteringCoefficient = 0f;
@@ -184,6 +185,9 @@ namespace _2IMW20_Project
                 triangleDegree += v.expectedTriangleDegree;
                 if (v.expectedVertexDegree > 1)
                     clusteringCoefficient += (v.expectedTriangleDegree * 2) / (v.expectedVertexDegree * (v.expectedVertexDegree - 1));
+
+                csvWriter.AppendExpectedDegree(string.Format("{0}, {1}", v.id, v.expectedVertexDegree));
+                csvWriter.AppendExpectedTriangleDegree(string.Format("{0}, {1}", v.id, v.expectedTriangleDegree));
             }
 
             Console.WriteLine("Expected Triangle Degree  : " + ((triangleDegree / _graph.V.Count())) + "\n");
@@ -198,11 +202,14 @@ namespace _2IMW20_Project
                 triangleDegree += v.triangleDegree;
                 if (v.vertexDegree > 1)
                     clusteringCoefficient += (v.triangleDegree * 2) / (v.vertexDegree * (v.vertexDegree - 1));
+
+                csvWriter.AppendActualDegree(string.Format("{0}, {1}", v.id, v.vertexDegree));
+                csvWriter.AppendActualTriangleDegree(string.Format("{0}, {1}", v.id, v.triangleDegree));
             }
             Console.WriteLine("Actual Triangle Degree  : " + ((triangleDegree / _graph.V.Count())) + "\n");
             Console.WriteLine("Actual Clustering Coefficient  : " + ((clusteringCoefficient / _graph.V.Count())) + "\n");
 
-
+            csvWriter.WriteFile();
         }
     }
 }

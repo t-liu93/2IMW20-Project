@@ -33,7 +33,7 @@ namespace _2IMW20_Project.graph
                 V[e.v].AddEdgeToVertex(e.u, e.probability);
             }
 
-            // Calculate vertex and triangle degrees
+            //Calculate vertex and triangle degrees
             CalculateDegrees();
         }
 

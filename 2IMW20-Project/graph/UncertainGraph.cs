@@ -136,7 +136,6 @@ namespace _2IMW20_Project.graph
                 float probability = 1f - (float)Math.Pow(Math.E, (-0.5 * e.Value));
                 edges.Last().probability = probability;
             }
-
             return new UncertainGraph(vertices, edges);
         }
     }
