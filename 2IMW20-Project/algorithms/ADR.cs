@@ -131,10 +131,14 @@ namespace _2IMW20_Project
             {
                 triangleDegree += v.expectedTriangleDegree;
                 if (v.expectedVertexDegree > 1)
+                {
                     clusteringCoefficient += (v.expectedTriangleDegree * 2) / (v.expectedVertexDegree * (v.expectedVertexDegree - 1));
+                    csvWriter.AppendExpectedCoefficient(string.Format("{0}", (v.expectedTriangleDegree * 2) / (v.expectedVertexDegree * (v.expectedVertexDegree - 1))));
+                }
 
-                csvWriter.AppendExpectedDegree(string.Format("{0}, {1}", v.id, v.expectedVertexDegree));
-                csvWriter.AppendExpectedTriangleDegree(string.Format("{0}, {1}", v.id, v.expectedTriangleDegree));
+                csvWriter.AppendExpectedDegree(string.Format("{0}", v.expectedVertexDegree));
+                csvWriter.AppendExpectedTriangleDegree(string.Format("{0}", v.expectedTriangleDegree));
+                
             }
 
             Console.WriteLine("Expected Triangle Degree  : " + ((triangleDegree / _graph.V.Count())) + "\n");
@@ -149,10 +153,14 @@ namespace _2IMW20_Project
             {
                 triangleDegree += v.triangleDegree;
                 if (v.vertexDegree > 1)
+                {
                     clusteringCoefficient += (v.triangleDegree * 2) / (v.vertexDegree * (v.vertexDegree - 1));
+                    csvWriter.AppendActualCoefficient(string.Format("{0}", (v.triangleDegree * 2) / (v.vertexDegree * (v.vertexDegree - 1))));
+                }
 
-                csvWriter.AppendActualDegree(string.Format("{0}, {1}", v.id, v.vertexDegree));
-                csvWriter.AppendActualTriangleDegree(string.Format("{0}, {1}", v.id, v.triangleDegree));
+                csvWriter.AppendActualDegree(string.Format("{0}", v.vertexDegree));
+                csvWriter.AppendActualTriangleDegree(string.Format("{0}", v.triangleDegree));
+                
             }
             Console.WriteLine("Actual Triangle Degree  : " + ((triangleDegree / _graph.V.Count())) + "\n");
             Console.WriteLine("Actual Clustering Coefficient  : " + ((clusteringCoefficient / _graph.V.Count())) + "\n");

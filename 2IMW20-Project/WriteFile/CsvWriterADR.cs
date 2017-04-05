@@ -13,6 +13,8 @@ namespace _2IMW20_Project.WriteFile
         private StringBuilder actualDegree;
         private StringBuilder expectedTriangleDegree;
         private StringBuilder actualTriangleDegree;
+        private StringBuilder expectedCoefficient;
+        private StringBuilder actualCoefficient;
 
         public CsvWriterADR()
         {
@@ -20,6 +22,8 @@ namespace _2IMW20_Project.WriteFile
             this.actualDegree = new StringBuilder();
             this.expectedTriangleDegree = new StringBuilder();
             this.actualTriangleDegree = new StringBuilder();
+            this.expectedCoefficient = new StringBuilder();
+            this.actualCoefficient = new StringBuilder();
         }
 
         public void AppendExpectedDegree(string newLine)
@@ -41,13 +45,23 @@ namespace _2IMW20_Project.WriteFile
         {
             this.actualTriangleDegree.AppendLine(newLine);
         }
+        public void AppendExpectedCoefficient(string newLine)
+        {
+            this.expectedCoefficient.AppendLine(newLine);
+        }
+        public void AppendActualCoefficient(string newLine)
+        {
+            this.actualCoefficient.AppendLine(newLine);
+        }
 
         public void WriteFile()
         {
-            File.WriteAllText(@"ExpectedDegreeADR.csv", this.expectedDegree.ToString());
+            File.WriteAllText(@"ExpectedDegree.csv", this.expectedDegree.ToString());
             File.WriteAllText(@"ActualDegreeADR.csv", this.actualDegree.ToString());
-            File.WriteAllText(@"ExpectedTriangleDegreeADR.csv", this.expectedTriangleDegree.ToString());
+            File.WriteAllText(@"ExpectedTriangleDegree.csv", this.expectedTriangleDegree.ToString());
             File.WriteAllText(@"ActualTriangleDegreeADR.csv", this.actualTriangleDegree.ToString());
+            File.WriteAllText(@"ExpectedCoefficient.csv", this.expectedCoefficient.ToString());
+            File.WriteAllText(@"ActualCoefficientADR.csv", this.actualCoefficient.ToString());
         }
     }
 }
