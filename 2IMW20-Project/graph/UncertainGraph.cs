@@ -131,7 +131,7 @@ namespace _2IMW20_Project.graph
 
             List<Edge> edges = new List<Edge>();
 
-            Dictionary<long, int> counters = rawData.GetEdgesCount();
+            Dictionary<long, int> counters = rawData.GetEdgeCounters();
             foreach (KeyValuePair<long, Edge> e in rawData.GetEdges())
             {
                 edges.Add(e.Value);
