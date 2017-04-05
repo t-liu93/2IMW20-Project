@@ -82,6 +82,7 @@ namespace _2IMW20_Project
             }
 
             _reprGraph = new Graph(_graph.V, _edgeList);
+            _edgeListDifference = sortedGraphEdges.Except(_edgeList).ToList();
 
 
             // Phase 2
@@ -96,10 +97,9 @@ namespace _2IMW20_Project
                 {
                     if (_reprGraph.V[j].neighbours.Count() == 0)
                         continue;
-
-                    _edgeListDifference = sortedGraphEdges.Except(_edgeList).ToList();
+                    
                     //Find all edges with vertex u and take one random edge from this
-                    e1 = _edgeList.Where(edge => edge.u == _reprGraph.V[j].id || edge.v == _reprGraph.V[j].id).ElementAt(_random.Next(_reprGraph.V[j].neighbours.Count() - 1));
+                    e1 = _reprGraph.E.Where(edge => edge.u == _reprGraph.V[j].id || edge.v == _reprGraph.V[j].id).ElementAt(_random.Next(_reprGraph.V[j].neighbours.Count() - 1));
                     e2 = _edgeListDifference.ElementAt(_random.Next(0, _edgeListDifference.Count()));
 
                     d1 = EquationOne(_reprGraph.V[e1.u], _reprGraph.V[e1.v]);
@@ -110,6 +110,8 @@ namespace _2IMW20_Project
                     {
                         _reprGraph.RemoveEdge(e1);
                         _reprGraph.AddEdge(e2);
+                        _edgeListDifference.Remove(e2);
+                        _edgeListDifference.Add(e1);
                     }
                 }
             }

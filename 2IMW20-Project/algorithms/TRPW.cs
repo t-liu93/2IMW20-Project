@@ -135,7 +135,7 @@ namespace _2IMW20_Project
                 }
             }
             _reprGraph = new Graph(_graph.V, _edgeList);
-
+            _edgeListDifference = sortedGraphEdges.Except(_edgeList).ToList();
 
             //Phase 2
             Edge e1 = null;
@@ -148,9 +148,7 @@ namespace _2IMW20_Project
             int N = 1000000; // what is N?
             for (i = 1; i < N; i++) // (9)
             {
-                _edgeListDifference = sortedGraphEdges.Except(_edgeList).ToList();
-
-                e1 = _edgeList.ElementAt(_random.Next(0, _edgeList.Count()));
+                e1 = _reprGraph.E.ElementAt(_random.Next(0, _edgeList.Count()));
                 e2 = _edgeListDifference.ElementAt(_random.Next(0, _edgeListDifference.Count()));
                 d1 = EquationOne(_reprGraph.V[e1.u], _reprGraph.V[e1.v], _reprGraph.V[e2.u], _reprGraph.V[e2.v]);
                 d2 = EquationTwo(_reprGraph.V[e1.u], _reprGraph.V[e1.v], _reprGraph.V[e2.u], _reprGraph.V[e2.v]);
@@ -159,6 +157,8 @@ namespace _2IMW20_Project
 
                 if (d1 + d2 < 0) // (14)
                 {
+                    _edgeListDifference.Remove(e2);
+                    _edgeListDifference.Add(e1);
                     _reprGraph.RemoveEdge(e1);
                     _reprGraph.AddEdge(e2);
                 }
@@ -166,6 +166,7 @@ namespace _2IMW20_Project
                 d3 = EquationThree(_reprGraph.V[e3.u], _reprGraph.V[e3.v]);
                 if (d3 < 0) // (18)
                 {
+                    _edgeListDifference.Remove(e3);
                     _reprGraph.AddEdge(e3);
                 }
             }
