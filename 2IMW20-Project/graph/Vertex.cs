@@ -17,6 +17,9 @@ namespace _2IMW20_Project
         public float expectedVertexDegree;
         public float expectedTriangleDegree;
 
+        public float clusteringCoefficient;
+        public float expectedClusteringCoefficient;
+
         public Vertex(int id)
         {
             this.id = id;
@@ -27,6 +30,8 @@ namespace _2IMW20_Project
             this.expectedVertexDegree = 0f;
             this.expectedTriangleDegree = 0f;
 
+            this.clusteringCoefficient = 0f;
+            this.expectedClusteringCoefficient = 0f;
             this.neighbours = new Dictionary<int, float>();
         }
 

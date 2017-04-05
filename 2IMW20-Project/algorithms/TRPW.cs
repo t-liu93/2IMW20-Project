@@ -102,23 +102,27 @@ namespace _2IMW20_Project
             // Calculate total probability (2)
             float mG = 0f;
 
-            foreach (Edge e in _graph.E)
+
+            foreach (Edge edge in _graph.E)
             {
-                mG += e.probability;
+                mG += edge.probability;
             }
             expectedDegree = mG * 2;
 
             // Sort edges according to their probability (3)
-            List<Edge> sortedGraphEdges = _graph.E.OrderByDescending(e => ((Edge)e).probability).ToList();
+            List<Edge> sortedGraphEdges = _graph.E.OrderByDescending(edge => ((Edge)edge).probability).ToList();
 
             // Loop edges untill we reach the expected amount of edges (4)
 
             _edgeListDifference = sortedGraphEdges.Except(_edgeList).ToList();
             int next = 0;
+            Edge e = null;
+            Double r = 0.0;
+
             while (_edgeList.Count < Math.Floor(mG))
-            {
-                Edge e = _edgeListDifference.ElementAt(next);
-                Double r = _random.NextDouble();
+            { 
+                e = _edgeListDifference.ElementAt(next);
+                r = _random.NextDouble();
 
                 if (r <= e.probability)
                     _edgeList.Add(e);
@@ -134,18 +138,24 @@ namespace _2IMW20_Project
 
 
             //Phase 2
+            Edge e1 = null;
+            Edge e2 = null;
+            Edge e3 = null;
+            Double d1 = 0.0;
+            Double d2 = 0.0;
+            Double d3 = 0.0;
 
-            int N = 100000; // what is N?
+            int N = 1000000; // what is N?
             for (i = 1; i < N; i++) // (9)
             {
                 _edgeListDifference = sortedGraphEdges.Except(_edgeList).ToList();
 
-                Edge e1 = _edgeList.ElementAt(_random.Next(0, _edgeList.Count()));
-                Edge e2 = _edgeListDifference.ElementAt(_random.Next(0, _edgeListDifference.Count()));
-                Double d1 = EquationOne(_reprGraph.V[e1.u], _reprGraph.V[e1.v], _reprGraph.V[e2.u], _reprGraph.V[e2.v]);
-                Double d2 = EquationTwo(_reprGraph.V[e1.u], _reprGraph.V[e1.v], _reprGraph.V[e2.u], _reprGraph.V[e2.v]);
+                e1 = _edgeList.ElementAt(_random.Next(0, _edgeList.Count()));
+                e2 = _edgeListDifference.ElementAt(_random.Next(0, _edgeListDifference.Count()));
+                d1 = EquationOne(_reprGraph.V[e1.u], _reprGraph.V[e1.v], _reprGraph.V[e2.u], _reprGraph.V[e2.v]);
+                d2 = EquationTwo(_reprGraph.V[e1.u], _reprGraph.V[e1.v], _reprGraph.V[e2.u], _reprGraph.V[e2.v]);
 
-                Edge e3 = _edgeListDifference.ElementAt(_random.Next(0, _edgeListDifference.Count()));
+                e3 = _edgeListDifference.ElementAt(_random.Next(0, _edgeListDifference.Count()));
 
                 if (d1 + d2 < 0) // (14)
                 {
@@ -153,7 +163,7 @@ namespace _2IMW20_Project
                     _reprGraph.AddEdge(e2);
                 }
 
-                Double d3 = EquationThree(_reprGraph.V[e3.u], _reprGraph.V[e3.v]);
+                d3 = EquationThree(_reprGraph.V[e3.u], _reprGraph.V[e3.v]);
                 if (d3 < 0) // (18)
                 {
                     _reprGraph.AddEdge(e3);
@@ -168,12 +178,16 @@ namespace _2IMW20_Project
             Console.WriteLine("Expected Degree  : " + ((expectedDegree / _graph.V.Count())) + "\n");
 
             float triangleDegree = 0f;
+            float clusteringCoefficient = 0f;
             foreach (Vertex v in _graph.V.Values)
             {
                 triangleDegree += v.expectedTriangleDegree;
+                if (v.expectedVertexDegree > 1)
+                    clusteringCoefficient += (v.expectedTriangleDegree * 2) / (v.expectedVertexDegree * (v.expectedVertexDegree - 1));
             }
 
             Console.WriteLine("Expected Triangle Degree  : " + ((triangleDegree / _graph.V.Count())) + "\n");
+            Console.WriteLine("Expected Clustering Coefficient  : " + ((clusteringCoefficient / _graph.V.Count())) + "\n");
 
             Console.WriteLine("Representative Graph : ");
             Console.WriteLine("Amount of Edges  : " + _reprGraph.E.Count());
@@ -182,8 +196,11 @@ namespace _2IMW20_Project
             foreach (Vertex v in _reprGraph.V.Values)
             {
                 triangleDegree += v.triangleDegree;
+                if (v.vertexDegree > 1)
+                    clusteringCoefficient += (v.triangleDegree * 2) / (v.vertexDegree * (v.vertexDegree - 1));
             }
             Console.WriteLine("Actual Triangle Degree  : " + ((triangleDegree / _graph.V.Count())) + "\n");
+            Console.WriteLine("Actual Clustering Coefficient  : " + ((clusteringCoefficient / _graph.V.Count())) + "\n");
 
 
         }

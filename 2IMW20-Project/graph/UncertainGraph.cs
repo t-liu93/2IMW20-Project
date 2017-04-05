@@ -48,6 +48,7 @@ namespace _2IMW20_Project.graph
                         //We find the same triangle multiple times, so we only add the value for the current edge
                         V[e.u].expectedTriangleDegree += (0.5f * triangleProbability);
                         V[e.v].expectedTriangleDegree += (0.5f * triangleProbability);
+
                     }
                 }
             }
