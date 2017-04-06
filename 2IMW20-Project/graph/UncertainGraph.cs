@@ -61,7 +61,7 @@ namespace _2IMW20_Project.graph
         public override void AddEdge(Edge e)
         {
             // Add edge to the list
-            E.Add(e);
+            AddToEdges(e);
 
             // Update vertex degree
             V[e.u].vertexDegree++;
@@ -92,7 +92,7 @@ namespace _2IMW20_Project.graph
         public override void RemoveEdge(Edge e)
         {
             // Add edge to the list
-            E.Remove(e);
+            RemoveFromEdges(e);
 
             // Update vertex degree
             V[e.u].vertexDegree--;
@@ -132,11 +132,12 @@ namespace _2IMW20_Project.graph
             List<Edge> edges = new List<Edge>();
 
             Dictionary<long, int> counters = rawData.GetEdgeCounters();
+            float probability = 0.0f;
             foreach (KeyValuePair<long, Edge> e in rawData.GetEdges())
             {
+                probability = 1f - (float)Math.Pow(Math.E, (-0.5 * counters[e.Key]));
+                e.Value.probability = probability;
                 edges.Add(e.Value);
-                float probability = 1f - (float)Math.Pow(Math.E, (-0.5 * counters[e.Key]));
-                edges.Last().probability = probability;
             }
 
             return new UncertainGraph(vertices, edges);

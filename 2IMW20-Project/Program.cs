@@ -53,8 +53,8 @@ namespace _2IMW20_Project
 
                 //Following code is used to generate the dataset that will be used by Graph and algorithms
                 Console.WriteLine("Start build dataset...");
-                dataset.RawData data = new dataset.RawDataSNAP(email); //In the final version, location will be input from console.
-                //dataset.RawData data = new dataset.RawDataSNAP(facebook);
+                //dataset.RawData data = new dataset.RawDataDblp(simpleDblp); //In the final version, location will be input from console.
+                dataset.RawData data = new dataset.RawDataSNAP(email);
                 data.BuildDataset();
 
                 Console.WriteLine("Dataset build finished.");

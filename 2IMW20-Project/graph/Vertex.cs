@@ -9,7 +9,7 @@ namespace _2IMW20_Project
     class Vertex
     {
         public int id;
-        public Dictionary<int, Edge> neighbours;
+        public SortedList<int, Edge> neighbours;
 
         public int vertexDegree;
         public float triangleDegree;
@@ -32,7 +32,7 @@ namespace _2IMW20_Project
 
             this.clusteringCoefficient = 0f;
             this.expectedClusteringCoefficient = 0f;
-            this.neighbours = new Dictionary<int, Edge>();
+            this.neighbours = new SortedList<int, Edge>();
         }
 
         public float GetVertexDiscrepancy()

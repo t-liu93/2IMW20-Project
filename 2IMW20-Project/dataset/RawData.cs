@@ -58,6 +58,8 @@ namespace _2IMW20_Project.dataset
 		/// <param name="v">vertix v of the edge</param>
 		public void AddEdge(int u, int v)
 		{
+            if (u == v)
+                return;
 			//int i = GetEdgeId(u, v);
 			//if (i != -1)
 			//{

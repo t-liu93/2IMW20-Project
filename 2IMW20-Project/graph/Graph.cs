@@ -8,6 +8,7 @@ namespace _2IMW20_Project.graph
 {
     class Graph
     {
+        private Dictionary<Edge, int> _edgeListHash; //Edgelist is a combination of a List and Dictionary to be able to do all calls in constant time
         public Dictionary<int, Vertex> V;
         public List<Edge> E;
 
@@ -15,23 +16,28 @@ namespace _2IMW20_Project.graph
         {
             this.V = new Dictionary<int, Vertex>();
             this.E = new List<Edge>();
+            this._edgeListHash = new Dictionary<Edge, int>();
         }
 
         public Graph(Dictionary<int, Vertex> V, List<Edge> E)
         {
             this.V = V;
             this.E = E;
+            this._edgeListHash = new Dictionary<Edge, int>();
 
             foreach (Vertex v in V.Values)
             {
-                v.neighbours = new Dictionary<int, Edge>();
+                v.neighbours = new SortedList<int, Edge>();
             }
 
-            foreach (Edge e in E)
+
+            for (int i = 0; i < E.Count(); i++)
             {
-                V[e.u].AddEdgeToVertex(e.v, e);
-                V[e.v].AddEdgeToVertex(e.u, e);
+                _edgeListHash.Add(E[i], i);
+                V[E[i].u].AddEdgeToVertex(E[i].v, E[i]);
+                V[E[i].v].AddEdgeToVertex(E[i].u, E[i]);
             }
+            
 
             //Calculate vertex and triangle degrees
             CalculateDegrees();
@@ -69,6 +75,27 @@ namespace _2IMW20_Project.graph
 
         }
 
+        /// <summary>
+        /// Remove edge from both the edgelist as the edgelisthashing
+        /// </summary>
+        protected void RemoveFromEdges(Edge e)
+        {
+            Edge tempEdge = E.Last();
+            int tempIndex = _edgeListHash[e];
+            E[tempIndex] = tempEdge;
+            _edgeListHash[tempEdge] = tempIndex;
+            E.RemoveAt(E.Count() - 1);
+            _edgeListHash.Remove(e);
+        }
+
+        /// <summary>
+        /// Add edge to both the edgelist as the edgelisthashing
+        /// </summary>
+        protected void AddToEdges(Edge e)
+        {
+            E.Add(e);
+            _edgeListHash.Add(e, E.Count() - 1);
+        }
 
         /// <summary>
         /// Add an edge to the graph.
@@ -77,7 +104,7 @@ namespace _2IMW20_Project.graph
         public virtual void AddEdge(Edge e)
         {
             // Add edge to the list
-            E.Add(e);
+            AddToEdges(e);
 
             // Update vertex degree
             V[e.u].vertexDegree++;
@@ -105,7 +132,7 @@ namespace _2IMW20_Project.graph
         public virtual void RemoveEdge(Edge e)
         {
             // Add edge to the list
-            E.Remove(e);
+            RemoveFromEdges(e);
 
             // Update vertex degree
             V[e.u].vertexDegree--;
@@ -143,11 +170,12 @@ namespace _2IMW20_Project.graph
             List<Edge> edges = new List<Edge>();
 
             Dictionary<long, int> counters = rawData.GetEdgeCounters();
+            float probability = 0.0f;
             foreach (KeyValuePair<long, Edge> e in rawData.GetEdges())
             {
+                probability = 1f - (float)Math.Pow(Math.E, (-0.5 * counters[e.Key]));
+                e.Value.probability = probability;
                 edges.Add(e.Value);
-                float probability = 1f - (float)Math.Pow(Math.E, (-0.5 * counters[e.Key]));
-                edges.Last().probability = probability;
             }
 
             return new Graph(vertices, edges);

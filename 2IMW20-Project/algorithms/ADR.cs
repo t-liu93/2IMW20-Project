@@ -13,6 +13,7 @@ namespace _2IMW20_Project
         private Graph _reprGraph;
         private float expectedDegree;
         private List<Edge> _edgeList; // Our current edge list
+        private Dictionary<Edge, int> _edgeListDifferenceHash;
         private List<Edge> _edgeListDifference; // Constantly changing difference of the current edge list and the complete edge list
         private Random _random;
 
@@ -20,6 +21,7 @@ namespace _2IMW20_Project
         {
             // Initialize algorithm
             _edgeList = new List<Edge>();
+            _edgeListDifferenceHash = new Dictionary<Edge, int>();
             _random = new Random();
             _graph = G;
         }
@@ -38,6 +40,22 @@ namespace _2IMW20_Project
             return result;
         }
 
+        public void RemoveFromDifference(Edge e)
+        {
+            Edge tempEdge = _edgeListDifference.Last();
+            int tempIndex = _edgeListDifferenceHash[e];
+            _edgeListDifference[tempIndex] = tempEdge;
+            _edgeListDifferenceHash[tempEdge] = tempIndex;
+            _edgeListDifference.RemoveAt(_edgeListDifference.Count() - 1);
+            _edgeListDifferenceHash.Remove(e);
+        }
+
+        public void AddToDifference(Edge e)
+        {
+            _edgeListDifference.Add(e);
+            _edgeListDifferenceHash.Add(e, _edgeListDifference.Count() - 1);
+        }
+
         public void Run()
         {
             // Phase 1
@@ -45,10 +63,11 @@ namespace _2IMW20_Project
             // Initialize (1)
             int i = 0;
             _edgeList = new List<Edge>();
-
-            // Calculate total probability (2)
+            Edge e = null;
+            Double r = 0.0;
             float P = 0f;
 
+            // Calculate total probability (2)
             foreach (Edge edge in _graph.E)
             {
                 P += edge.probability;
@@ -56,41 +75,48 @@ namespace _2IMW20_Project
             expectedDegree = P;
 
             // Sort edges according to their probability (3)
-            List<Edge> sortedGraphEdges = _graph.E.OrderByDescending(edge => ((Edge)edge).probability).ToList();
+            List<Edge> sortedGraphEdges = _graph.E.OrderByDescending(edge => edge.probability).ToList();
+
+            sortedGraphEdges = sortedGraphEdges.Except(_edgeList).ToList();
 
             // Loop edges untill we reach the expected amount of edges (4)
-            _edgeListDifference = sortedGraphEdges.Except(_edgeList).ToList();
             int next = 0;
-
-            Edge e = null;
-            Double r = 0.0;
-
-            while (_edgeList.Count < Math.Round(P))
+            int diffCount = sortedGraphEdges.Count();
+            int edgeCount = _edgeList.Count;
+            while (edgeCount < Math.Round(P))
             {
-                e = _edgeListDifference.ElementAt(next);
+                e = sortedGraphEdges[next];
                 r = _random.NextDouble();
 
                 if (r <= e.probability)
+                {
                     _edgeList.Add(e);
+                    edgeCount++;
+                }
 
                 next++;
-                if (next >= _edgeListDifference.Count())
+                if (next >= diffCount)
                 {
-                    _edgeListDifference = sortedGraphEdges.Except(_edgeList).ToList();
+                    sortedGraphEdges = sortedGraphEdges.Except(_edgeList).ToList();
+                    diffCount = sortedGraphEdges.Count();
                     next = 0;
                 }
             }
 
             _reprGraph = new Graph(_graph.V, _edgeList);
             _edgeListDifference = sortedGraphEdges.Except(_edgeList).ToList();
-
+            for (int k = 0; k < _edgeListDifference.Count(); k++)
+            {
+                _edgeListDifferenceHash.Add(_edgeListDifference[k], k);
+            }
 
             // Phase 2
             Edge e1 = null;
             Edge e2 = null;
             Double d1 = 0.0;
             Double d2 = 0.0;
-            int steps = 100; // what is steps?
+
+            int steps = 1000; // what is steps?
             for (i = 1; i < steps; i++) // (9)
             {
                 for (int j = 0; j < _reprGraph.V.Values.Count(); j++)
@@ -99,19 +125,22 @@ namespace _2IMW20_Project
                         continue;
 
                     //Find all edges with vertex u and take one random edge from this
-                    e1 = _reprGraph.V[j].neighbours.ElementAt(_random.Next(_reprGraph.V[j].neighbours.Count())).Value;//_reprGraph.E.Where(edge => edge.u == _reprGraph.V[j].id || edge.v == _reprGraph.V[j].id).ElementAt(_random.Next(_reprGraph.V[j].neighbours.Count() - 1));
-                    e2 = _edgeListDifference.ElementAt(_random.Next(0, _edgeListDifference.Count()));
+                    e1 = _reprGraph.V[j].neighbours.Values[_random.Next(_reprGraph.V[j].neighbours.Count() - 1)];
+                    //Take a random edge not in the current edgelist
+                    e2 = _edgeListDifference[_random.Next(_edgeListDifference.Count() - 1)];
 
+                    //Calculate errors
                     d1 = EquationOne(_reprGraph.V[e1.u], _reprGraph.V[e1.v]);
                     d2 = EquationTwo(_reprGraph.V[e2.u], _reprGraph.V[e2.v]);
                     
 
                     if (d1 + d2 < 0) // (14)
                     {
+                        //Swap edges e1 and e2
                         _reprGraph.RemoveEdge(e1);
                         _reprGraph.AddEdge(e2);
-                        _edgeListDifference.Remove(e2);
-                        _edgeListDifference.Add(e1);
+                        RemoveFromDifference(e2);
+                        AddToDifference(e1);
                     }
                 }
             }
