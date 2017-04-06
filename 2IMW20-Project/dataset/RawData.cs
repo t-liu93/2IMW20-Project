@@ -58,28 +58,19 @@ namespace _2IMW20_Project.dataset
 		/// <param name="v">vertix v of the edge</param>
 		public void AddEdge(int u, int v)
 		{
-            if (u == v)
-                return;
-			//int i = GetEdgeId(u, v);
-			//if (i != -1)
-			//{
-			//    Edge e = GetEdgeById(i);
-			//    edges[e]++;
-			//}
-			//else
-			//{
-			//    edges.Add(new Edge(GetMaxEdgeId(this.edges) + 1, u, v), 1);
-			//}
-			long edgeId = Hash(u, v);
-			if (edges.ContainsKey(edgeId))
-			{
-				edgeCounters[edgeId]++;
-			}
-			else
-			{
-				edges.Add(edgeId, new Edge(edgeIdCounter++, u, v));
-				edgeCounters.Add(edgeId, 1);
-			}
+            		if (u != v)
+            		{
+                		long edgeId = Hash(u, v);
+                		if (edges.ContainsKey(edgeId))
+                		{
+                    			edgeCounters[edgeId]++;
+                		}
+                		else
+                		{
+                    			edges.Add(edgeId, new Edge(edgeIdCounter++, u, v));
+                    			edgeCounters.Add(edgeId, 1);
+                		}
+            		}
 		}
 
 		//Get class variables

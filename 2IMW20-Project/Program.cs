@@ -38,6 +38,8 @@ namespace _2IMW20_Project
 				string onemDblp = "Data//1MDBLP.xml";
 				string email = "Data//email-Enron.txt";
                 string asskitter = "DATA//as-skitter.txt";
+                string comDblp = "DATA//comDBLP.txt";
+                string fullDblp = "Data//FullDBLP.xml";
                 //dataset.RawData data = new dataset.RawDataSNAP(snapLocation);
                 //data.BuildDataset();
                 //foreach (KeyValuePair<Edge, int> kvp in data.GetEdges())
@@ -53,8 +55,8 @@ namespace _2IMW20_Project
 
                 //Following code is used to generate the dataset that will be used by Graph and algorithms
                 Console.WriteLine("Start build dataset...");
-                //dataset.RawData data = new dataset.RawDataDblp(simpleDblp); //In the final version, location will be input from console.
-                dataset.RawData data = new dataset.RawDataSNAP(email);
+                dataset.RawData data = new dataset.RawDataDblp(fullDblp); //In the final version, location will be input from console.
+                //dataset.RawData data = new dataset.RawDataSNAP(email);
                 data.BuildDataset();
 
                 Console.WriteLine("Dataset build finished.");
