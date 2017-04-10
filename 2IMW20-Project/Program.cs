@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using _2IMW20_Project.graph;
 
 namespace _2IMW20_Project
@@ -31,15 +32,12 @@ namespace _2IMW20_Project
 
 
                 //Check parser
-                string smallDblp = "Data//smallDblp.xml";
-                string simpleDblp = "Data//dblp.xml";
-                string facebook = "Data//facebook_combined.txt";
-                string p2p08 = "Data//p2p-Gnutella08.txt";
-				string onemDblp = "Data//1MDBLP.xml";
-				string email = "Data//email-Enron.txt";
-                string asskitter = "DATA//as-skitter.txt";
-                string comDblp = "DATA//comDBLP.txt";
-                string fullDblp = "Data//FullDBLP.xml";
+                string facebook = "..//..//..//Data//facebook_combined.txt";
+				string email = "..//..//..//Data//email-Enron.txt";
+                string asskitter = "..//..//..//DATA//as-skitter.txt";
+                string fullDblp = "..//..//..//Data//FullDBLP.xml";
+                string brightkite = "..//..//..//Data//Brightkite_edges.txt";
+                string gowalla = "..//..//..//Data//Gowalla_edges.txt";
                 //dataset.RawData data = new dataset.RawDataSNAP(snapLocation);
                 //data.BuildDataset();
                 //foreach (KeyValuePair<Edge, int> kvp in data.GetEdges())
@@ -52,11 +50,12 @@ namespace _2IMW20_Project
                 //Test.DatasetTest datasetTest = new Test.DatasetTest(location);
                 //datasetTest.RunTest();
                 //Console.ReadKey();
-
+                System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
+                timer.Start();
                 //Following code is used to generate the dataset that will be used by Graph and algorithms
                 Console.WriteLine("Start build dataset...");
                 //dataset.RawData data = new dataset.RawDataDblp(simpleDblp); //In the final version, location will be input from console.
-                dataset.RawData data = new dataset.RawDataSNAP(email);
+                dataset.RawData data = new dataset.RawDataSNAP(facebook);
                 data.BuildDataset();
 
                 Console.WriteLine("Dataset build finished.");
@@ -92,7 +91,8 @@ namespace _2IMW20_Project
                 TRPWAlgorithm.PrintResults();
 
                 Console.WriteLine("Completed TRPW");
-
+                timer.Stop();
+                File.WriteAllText(@"ElapsedTime.txt", timer.Elapsed.ToString());
 
                 // Write results
                 
