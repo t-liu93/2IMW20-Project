@@ -110,30 +110,30 @@ CoefficientFinal <- rbind(ExpCoefficientFinal, ActualCoefficientADRFinal, Actual
 ggplot(DegreeFinal, aes(x=Degree,y=percentage,group=group,color=group,shape=group))+
   geom_point()+
   geom_line()+
-  scale_y_log10(limits=c(1e-2,1e-1))+
+  scale_y_log10(limits=c(1e-3,1))+
   # scale_y_log10()+
-  coord_cartesian(xlim=c(0,20))+
-  scale_x_discrete(breaks=seq(0,20,by=1))+
+  coord_cartesian(xlim=c(0,15))+
+  scale_x_discrete(breaks=seq(0,15,by=1))+
   # coord_cartesian(xlim=c(0,100))+
   # scale_x_discrete(breaks=seq(0,100,by=5))+
-  labs(title="Vertex Degree Distribution Facebook", x="Vertex Degree", y="Percentage Vertices")
+  labs(title="Vertex Degree Distribution DBLP", x="Vertex Degree", y="Percentage Vertices")
 #Triangle Degree
 ggplot(TriangleFinal, aes(x=TriangleDegree,y=percentage,group=group,color=group,shape=group))+
   geom_point()+
   geom_line()+
-  # scale_y_log10(limits=c(1e-2,1))+
-  scale_y_log10()+
-  coord_cartesian(xlim=c(0,20))+
-  scale_x_discrete(breaks=seq(0, 20, by=1))+
-  labs(title="Triangle Degree Distribution Facebook", x="Triangle Degree", y="Percentage Vertices")
+  scale_y_log10(limits=c(1e-3,1))+
+  # scale_y_log10()+
+  coord_cartesian(xlim=c(0,15))+
+  scale_x_discrete(breaks=seq(0, 15, by=1))+
+  labs(title="Triangle Degree Distribution DBLP", x="Triangle Degree", y="Percentage Vertices")
 #Clustering Coefficient
 ggplot(CoefficientFinal, aes(x=Coefficient,y=percentage,group=group,color=group,shape=group))+
   geom_point()+
   geom_line()+
   scale_y_log10()+
-  coord_cartesian(xlim=c(0,8))+
+  coord_cartesian(xlim=c(0,10.5))+
   scale_x_discrete(breaks=seq(0, 1, by=0.1))+
-  labs(title="Clustering Coefficient Distribution Facebook", x="Clustering Coefficient Degree", y="Percentage Vertices")
+  labs(title="Clustering Coefficient Distribution DBLP", x="Clustering Coefficient Degree", y="Percentage Vertices")
 
 #Triangle count
 ExpTriangleCount <- data.frame(sum(as.numeric(ExpTriangleFinal$TriangleDegree)*as.numeric(ExpTriangleFinal$Count)))
@@ -156,7 +156,7 @@ TriangleCount <- rbind(ExpTriangleCountFinal, ADRTriangleCountFinal, TRPWTriangl
 
 ggplot(TriangleCount, aes(x=group,y=TriangleDegree,group=group,fill=group))+
   geom_bar(stat="identity")+
-  labs(title="Tiangle Count Facebook",x="Algorithm",y="Number of Triangles")+
+  labs(title="Tiangle Count DBLP",x="Algorithm",y="Number of Triangles")+
   guides(fill=guide_legend(title="Algorithm"))
 
 
