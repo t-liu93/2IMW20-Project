@@ -51,11 +51,10 @@ namespace _2IMW20_Project
                 //datasetTest.RunTest();
                 //Console.ReadKey();
                 System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
-                timer.Start();
                 //Following code is used to generate the dataset that will be used by Graph and algorithms
                 Console.WriteLine("Start build dataset...");
                 //dataset.RawData data = new dataset.RawDataDblp(fullDblp); //In the final version, location will be input from console.
-                dataset.RawData data = new dataset.RawDataSNAP(email);
+                dataset.RawData data = new dataset.RawDataSNAP(asskitter);
                 data.BuildDataset();
 
                 Console.WriteLine("Dataset build finished.");
@@ -77,22 +76,26 @@ namespace _2IMW20_Project
                 // Execute algorithms:
 
                 Console.WriteLine("Executing Degree Based...");
-
+                timer.Start();
                 ADR ADRAlgorithm = new ADR(UncertainGraph.constructFromDataset(data));
                 ADRAlgorithm.Run();
+                timer.Stop();
                 ADRAlgorithm.PrintResults();
+                
+                File.WriteAllText(@"ADRElapsedTime.txt", timer.Elapsed.ToString());
 
                 Console.WriteLine("Completed Degree Based");
 
                 Console.WriteLine("Executing TRPW...");
-
+                timer.Reset();
+                timer.Start();
                 TRPW TRPWAlgorithm = new TRPW(UncertainGraph.constructFromDataset(data));
                 TRPWAlgorithm.Run();
-                TRPWAlgorithm.PrintResults();
-
-                Console.WriteLine("Completed TRPW");
                 timer.Stop();
-                File.WriteAllText(@"ElapsedTime.txt", timer.Elapsed.ToString());
+                TRPWAlgorithm.PrintResults();
+                
+                Console.WriteLine("Completed TRPW");
+                File.WriteAllText(@"TRPWElapsedTime.txt", timer.Elapsed.ToString());
 
                 // Write results
                 
